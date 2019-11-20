@@ -46,7 +46,7 @@
 |price|integer|null: false|
 |name|string|null: false|
 |image|string|null: false|
-|status|string|null: false|
+|condition|string|null: false|
 |description|text|null: false|
 |item_size|string|null: false|
 |region|string|null: false|
@@ -58,6 +58,18 @@
 ### Association
 - belongs_to :user
 - has_many :comments
+
+## statusテーブル
+|Column|Type|Option|
+|------|----|------|
+|selling_item|integer|null: false|
+|sold_item|integer|null: false|
+|suspended_item|integer|null: false|
+|item_id|foreign_key: true|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 ## likesテーブル
 |Column|Type|Option|
