@@ -21,10 +21,11 @@
 
 
 ### Association
-- has_many :items
-- has_many :follows
-- has_many :likes
-- has_many :address
+- has_many :items, dependent: :destroy
+- has_many :follows, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :address, dependent: :destroy
+- has_many :comments, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Option|
@@ -38,7 +39,7 @@
 
 
 ### Association
-- belongs_to :user
+- belongs_to :user, dependent: :destroy
 
 ## itemsテーブル
 |Column|Type|Option|
@@ -57,7 +58,16 @@
 
 ### Association
 - belongs_to :user
-- has_many :comments
+- has_many :comments, dependent: :destroy
+
+## categoriesテーブル
+|Column|Type|Option|
+|------|----|------|
+|name|string|null: false|
+|ancestry	|string|
+
+### Association
+- has_ancestry
 
 ## statusテーブル
 |Column|Type|Option|
@@ -90,6 +100,6 @@
 
 ### Association
 - belongs_to :item
-
+- belongs_to :user nnn
 
 
