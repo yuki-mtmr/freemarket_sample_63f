@@ -1,0 +1,12 @@
+.container
+  .container__header
+    %h2プロフィール
+  .container__form
+    .container__form__top
+      %figure
+        .container__form__top__image
+          =image_tag "//1.bp.blogspot.com/-4wfcL_kE4hg/XVjgJLRouRI/AAAAAAABUMo/n7wMY5kms9I6BiGxu6a5gIKkPipH7ls4wCLcBGAs/s1600/kid_seikaku_kachiki_boy.png", width:"60",heigth:"60"
+      %input.container__form__top__edit-name(type="text")/
+    .container__form__text
+      %textarea.container__form__text__comment
+      %input.container__form__text__btn{:type => "submit", :value => "変更する"}
