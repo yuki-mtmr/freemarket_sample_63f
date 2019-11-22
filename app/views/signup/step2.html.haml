@@ -1,0 +1,10 @@
+%p
+  電話番号の確認
+
+携帯電話の番号
+= form_with model: @user, url: step3_signup_index_path, method: :get, html: {class: 'second-wrapper__box'}, local: true  do |f|
+  = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
+  %br
+  本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+  %br
+  = f.submit 'SMSを送信する', class: 'btn-default'

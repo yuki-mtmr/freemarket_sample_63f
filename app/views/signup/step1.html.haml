@@ -1,0 +1,38 @@
+%p
+  会員情報入力
+
+= form_with model: @user, url: step2_signup_index_path, method: :get, html: {class: 'first-main__box'}, local: true do |f|
+  ニックネーム
+  %br
+    = f.text_field :nickname, placeholder: '例) メルカリ太郎'
+  メールアドレス
+  %br
+    = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+  パスワード
+  %br
+    = f.password_field :password, placeholder: '6文字以上'
+    %p
+      本人確認
+    %p
+      安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+  お名前(全角)
+  %br
+    = f.text_field :last_name, placeholder: '例) 山田'
+    = f.text_field :first_name, placeholder: '例) 彩'
+  お名前カナ(全角)
+  %br
+    = f.text_field :last_name_kana, placeholder: '例) ヤマダ'
+    = f.text_field :first_name_kana, placeholder: '例) アヤ'
+  %br
+    = f.text_field :birth_year, placeholder: '--'
+    年
+    = f.text_field :birth_month, placeholder: '--'
+    月
+    = f.text_field :birth_day, placeholder: '--'
+    日
+  %br
+    ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+  %br
+    「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+  %br
+    = f.submit '次へ進む', class: 'submit-btn'
