@@ -40,110 +40,60 @@ html{
         }
       }
       &__bottom{
-        width:100%;
-        height: 5vh;
-        margin: 8px 0 0 0;
-        &__left{
-          width:28vw;
-          height:80%;
-          float:left;
-          display: flex;
-          margin-top: 10px;
-          &__category{
-            width: 8vw;
-            height: 3vh;
-            z-index: 3;
-            font-size: 14px;
-            font-weight: 600;
-          }
-          &__brand{
-            width: 8vw;
-            height: 3vh;
-            font-size: 14px;
-            font-weight: 600;
-          }
+        width: 72%;
+        height: 56%;
+        // background-color: #0099e8;
+        padding: 24px 64px 32px;
+        &__form1{
+          width:90%;
+          height: 4vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
         }
-        &__right{
-          width: 30vh;
-          height: 100%;
-          float: right;
-          display: flex;
-          &__newuser{
-            background-color: rgb(234, 53, 45);
-            color: rgb(255, 255, 255);
-            display: block;
-            font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(234, 53, 45);
-            border-image: initial;
-            border-radius: 4px;
-            padding: 8px 10px;
-          }
-          &__loguser{
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 149, 238);
-            display: block;
-            font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(0, 149, 238);
-            border-image: initial;
-            border-radius: 4px;
-            padding: 8px 10px;
-            transition: all 0.3s ease-out 0s;
-            margin: 0 0 0 10px;
-          }
+        &__form2{
+          width:90%;
+          height: 4vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
         }
-      }
-    }
-  }
-  .smart{
-    width: 100%;
-    height: 34vh;
-    background-image: url("image2.jpeg");
-    display: flex;
-    .smart-middle{
-      width: 50%;
-      height: 100%;
-      margin: 0px auto;
-      &__image{
-        width: 20vw;
-        height: 100%;
-        float: right;
-      }
-      &__application{
-        width: 35vw;
-        height: 100%;
-        &__top{
-          color: rgb(255, 255, 255);
-          font-size: 24px;
-          font-weight: 600;
-          margin-top: 4vh;
-          margin-bottom: 15px;
+        &__form3{
+          width:90%;
+          height: 6vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
         }
-        &__middle{
-          color: rgb(255, 255, 255);
-          font-size: 35px;
-          margin-bottom: 20px;
-          &__image{
-            float:right;
-            width: 20vw;
-            height: 100%;
-          }
+        &__form4{
+          width:90%;
+          height: 6vh;
+          padding: 10px 16px 8px;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 24px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
         }
-        &__bottom{
-          vertical-align: baseline;
-          margin-top: 10px;
-          padding: 0px;
-          border-width: 0px;
-          width: 25vw;
-          height: 8vh;
-          &__icon{
-            height: 7vh;
-            width: 7vh;
-            margin-left: 10px;
-          }
+        &__pass{
+          display: block;
+          margin: 40px 0 0;
+          color: #0099e8;
+          text-decoration: none;
+          font-size: 14px;
         }
       }
     }

@@ -1,0 +1,199 @@
+html {
+  height:100%;
+  background-color: #EEEEEE;
+  body {
+    height: 100%; 
+  }
+}
+.wrapper{
+width: 100vw;
+height: 100vh;
+background-color: #EEEEEE;
+.header{
+  width: 100%;
+  height: 12vh;
+  margin: 0 auto;
+  &__logo{
+    width: 13vw;
+    height: 11vh;
+    margin: 40px auto;
+  }
+}
+.content{
+  width:100%;
+  height: 100%;
+  .content-middle{
+    margin: 0 auto;
+    width: 32%;
+    height: 95%;
+    background-color: #FFFFFF;
+    &__header{
+      font-size: 14px;
+      height: 9vh;
+      // background-color: aqua;
+      padding: 40px 64px;
+      text-align: center;
+      border-bottom: solid 1px #EEEEEE;
+      &__p{
+        font-size: 14px;
+      }
+      &__a{
+        height: 3vh;
+        width: 3vw;
+        background-color: aqua;
+        &__text{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+        }
+      }
+    }
+    &__main{
+      width:100%;
+      height: 80vh;
+      &__top{
+        height: 17vh;
+        padding: 32px 64px;
+        border-top: 1px solid #eee;
+        &__facebook{
+          background: #385185;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          height: 7vh;
+          &__icon{
+            width: 26px;
+            height: 26px;
+            background-color: #FFFFFF;
+          }
+        }
+        &__google{
+          margin: 16px 0 0;
+          background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+          border: #979797 solid 1px;
+          color: #333;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          height: 7vh;
+          border: solid 1px;
+        }
+      }
+    }
+    &__bottom{
+      width: 72%;
+      height: 56%;
+      // background-color: #0099e8;
+      padding: 24px 64px 32px;
+      &__form1{
+        width:90%;
+        height: 4vh;
+        border: 1px solid #ccc;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      &__form2{
+        width:90%;
+        height: 4vh;
+        border: 1px solid #ccc;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      &__form3{
+        width:90%;
+        height: 6vh;
+        border: 1px solid #ccc;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      &__form4{
+        width:90%;
+        height: 6vh;
+        padding: 10px 16px 8px;
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 24px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+      }
+      &__pass{
+        display: block;
+        margin: 40px 0 0;
+        color: #0099e8;
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+  }
+}
+.footer{
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  .footer-nav{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    height: 12px;
+    &__text1{
+      display: block;
+      color: #333;
+      font-size: 12px;
+      display: inline-block;
+      text-align: -webkit-match-parent;
+    }
+    &__text2{
+      display: block;
+      color: #333;
+      font-size: 12px;
+      display: inline-block;
+    }
+    &__text3{
+      display: block;
+      color: #333;
+      font-size: 12px;
+      display: inline-block;
+    }
+  }
+  .footer-logo{
+    width: 100px;
+    height: 100px;
+    margin: 40px auto 0;
+  }
+  .footer-p{
+    font-size: 10px;
+    text-align: center;
+  }
+}
+}
