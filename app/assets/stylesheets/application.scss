@@ -1,107 +1,41 @@
-@import "userss";
 @import "reset";
-html {
-    height:100%;
-    background-color: #EEEEEE;
-    body {
-      height: 100%; 
-    }
+
+html{
+  height: 100%;
+  body{
+    height: 100%;
   }
+}
+
 .wrapper{
-  width: 100vw;
   height: 100vh;
-  background-color: #EEEEEE;
+  width:100vw;
+  position: fixed;
   .header{
-    width: 100%;
-    height: 12vh;
-    margin: 0 auto;
-    &__logo{
-      width: 13vw;
-      height: 11vh;
-      margin: 40px auto;
-    }
-  }
-  .content{
-    width:100%;
-    height: 50vh;
-    .content-tops{
-      width: 44vw;
-      height: 5vh;
+    height: 13vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    .header-middle{
+      height: 100%;
+      width: 70%;
       margin: 0 auto;
-      padding: 32px;
-      text-align: center;
-      background-color: #FFFFFF;
-      font-size: 22px;
-    }
-    .content-middles{
-      margin: 0 auto;
-      width: 48.5%;
-      height: 40%;
-      background-color: #FFFFFF;
-      &__main{
+      padding: 8px 0 0 ;
+      z-index: 0;
+      &__top{
         width:100%;
-        &__top{
-          height: 20vh;
-          padding: 40px 40px 64px;
-          border-top: 1px solid #eee;
-          background-color: #FFFFFF;
-          &__f{
-            padding: 0 135px;
-            margin: 0 auto;
-            &__mail{
-              background: #ea352d;
-              color: #fff;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              border: 1px solid transparent;
-              -webkit-transition: all ease-out .3s;
-              transition: all ease-out .3s;
-              cursor: pointer;
-              text-align: center;
-              height: 7vh;
-              border-radius: 4px;
-            }
-            &__facebook{
-              background: #385185;
-              color: #fff;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              margin: 16px 0 0;
-              border: 1px solid transparent;
-              -webkit-transition: all ease-out .3s;
-              transition: all ease-out .3s;
-              cursor: pointer;
-              text-align: center;
-              height: 7vh;
-              border-radius: 4px;
-              &__icon{
-                width: 26px;
-                height: 26px;
-                background-color: #FFFFFF;
-              }
-            }
-            &__google{
-              margin: 16px 0 0;
-              background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
-              border: #979797 solid 1px;
-              color: #333;
-              display: block;
-              width: 100%;
-              line-height: 48px;
-              font-size: 14px;
-              border: 1px solid transparent;
-              -webkit-transition: all ease-out .3s;
-              transition: all ease-out .3s;
-              cursor: pointer;
-              text-align: center;
-              height: 7vh;
-              border: solid 1px;
-              border-radius: 4px;
-            }
+        height: 5vh;
+        &__log{
+          width: 11vw;
+          position: fixed;
+        }
+        &__search{
+          width: 50vw;
+          height: 95%;
+          float: right;
+          .class{
+            width: 100%;
+            height: 100%;
           }
         }
       }
@@ -164,45 +98,213 @@ html {
       }
     }
   }
+
   .footer{
-    width: 456px;
-    height: 220px;
-    margin: 0 auto;
-    .footer-nav{
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      padding-inline-start: 40px;
-      height: 12px;
-      &__text1{
-        display: block;
-        color: #333;
-        font-size: 12px;
+    height: 53%;
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 0px 20px 10px;
+    .footer-middle{
+      margin: 0px auto;
+      width: 73vw;
+      height: 75%;
+      &__box1{
+        padding: 0px 40px 0px 0px;
         display: inline-block;
-        text-align: -webkit-match-parent;
+        margin-top: 18px;
+        vertical-align: top;
+        height: 100%;
+        width: 200px;
+        &__content1{
+          font-size: 16px;
+          font-family: Arial;
+          &__company{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__hiring{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__release{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__blog{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__guide{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+        }
       }
-      &__text2{
-        display: block;
-        color: #333;
-        font-size: 12px;
+      &__box2{
+        padding: 0px 40px 0px 0px;
         display: inline-block;
+        margin-top: 18px;
+        vertical-align: top;
+        height: 100%;
+        width: 200px;
+        &__content2{
+          font-size: 16px;
+          font-family: Arial;
+          &__guide{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__mercari-flights{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__yuyu-flights{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__big-flights{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__car{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__peace-of-mind{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__false{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__box{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+        }
       }
-      &__text3{
-        display: block;
-        color: #333;
-        font-size: 12px;
+      &__box3{
+        margin-top: 18px;
+        padding-right: 40px;
+        width: 39%;
+        height: 100%;
         display: inline-block;
+        vertical-align: top;
+        &__1{
+          display: flex;
+          width: 33vw;
+          height: 30vh;
+          &__content3{
+            font-size: 16px;
+            font-family: Arial;
+            &__privacy{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+            &__terms{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+            &__support{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+            &__compliance{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+          }
+        }
+        &__2{
+          width: 20vw;
+          height: 30vh;
+          list-style-type: disc;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+          padding-inline-start: 40px;
+          float: right;
+          margin-top:0 ;
+          &__data{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__item-transactions{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__financing{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+          &__law{
+            opacity: 0.7;
+            margin:16px 0 0;
+            font-size: 12px;
+          }
+        }  
+      }
+      &__box4{
+        margin-top: 18px;
+        padding: 0px 40px 0px 20px;
+        display: inline-block;
+        vertical-align: top;
+        width: 3vw;
+        height: 25vh;
+        &__cuntry{
+          &__2{
+            line-height: 1.4em;
+            margin: 0;
+            padding: 0;
+            &__japan{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+            &__united-states{
+              opacity: 0.7;
+              margin:16px 0 0;
+              font-size: 12px;
+            }
+          }
+        }
       }
     }
-    .footer-logo{
-      width: 100px;
-      height: 100px;
-      margin: 40px auto 0;
-    }
-    .footer-p{
-      font-size: 10px;
-      text-align: center;
+    .footer-bottom{
+      width: 100%;
+      height: 33px;
+      margin: 30px auto 20px;
+      -webkit-box-align: center;
+      align-items: center;
+      display: flex;
+      &__logo{
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
     }
   }
 }
