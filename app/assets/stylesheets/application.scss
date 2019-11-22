@@ -1,12 +1,13 @@
 @import "reset";
+// @import "userss";
 
-html{
-  height: 100%;
-  body{
-    height: 100%;
+html {
+  height: 100% ;
+  background-color: #EEEEEE;
+  body {
+    height: 100%; 
   }
 }
-
 .wrapper{
   height: 100vh;
   width:100vw;
@@ -25,14 +26,18 @@ html{
       &__top{
         width:100%;
         height: 5vh;
+        // background-color: red;
         &__log{
           width: 11vw;
+          // height: 10vh;
+          // background-color: red;
           position: fixed;
         }
         &__search{
           width: 50vw;
           height: 95%;
           float: right;
+          // background-color: blue;
           .class{
             width: 100%;
             height: 100%;
@@ -40,66 +45,120 @@ html{
         }
       }
       &__bottom{
-        width: 72%;
-        height: 56%;
-        // background-color: #0099e8;
-        padding: 24px 64px 32px;
-        &__form1{
-          width:90%;
-          height: 4vh;
-          border: 1px solid #ccc;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          margin: 10px 0;
+        width:100%;
+        height: 5vh;
+        margin: 8px 0 0 0;
+        // background-color:red;
+        &__left{
+          width:28vw;
+          height:80%;
+          float:left;
+          display: flex;
+          margin-top: 10px;
+          &__category{
+            width: 8vw;
+            height: 3vh;
+            z-index: 3;
+            font-size: 14px;
+            font-weight: 600;
+            // padding: 0px 10px;
+          }
+          &__brand{
+            width: 8vw;
+            height: 3vh;
+            font-size: 14px;
+            font-weight: 600;
+          }
         }
-        &__form2{
-          width:90%;
-          height: 4vh;
-          border: 1px solid #ccc;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          margin: 10px 0;
+        &__right{
+          width: 30vh;
+          height: 100%;
+          // background-color: aqua;
+          float: right;
+          display: flex;
+          &__newuser{
+            background-color: rgb(234, 53, 45);
+            color: rgb(255, 255, 255);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(234, 53, 45);
+            border-image: initial;
+            border-radius: 4px;
+            padding: 8px 10px;
+          }
+          &__loguser{
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 149, 238);
+            display: block;
+            font-size: 14px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(0, 149, 238);
+            border-image: initial;
+            border-radius: 4px;
+            padding: 8px 10px;
+            transition: all 0.3s ease-out 0s;
+            margin: 0 0 0 10px;
+          }
         }
-        &__form3{
-          width:90%;
-          height: 6vh;
-          border: 1px solid #ccc;
-          padding: 10px 16px 8px;
-          border-radius: 4px;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          margin: 10px 0;
+      }
+    }
+  }
+  .smart{
+    width: 100%;
+    height: 34vh;
+    background-image: url("image2.jpeg");
+    display: flex;
+    .smart-middle{
+      width: 50%;
+      height: 100%;
+      margin: 0px auto;
+      &__image{
+        width: 20vw;
+        height: 100%;
+        float: right;
+      }
+      &__application{
+        width: 35vw;
+        height: 100%;
+        &__top{
+          color: rgb(255, 255, 255);
+          font-size: 24px;
+          font-weight: 600;
+          margin-top: 4vh;
+          margin-bottom: 15px;
         }
-        &__form4{
-          width:90%;
-          height: 6vh;
-          padding: 10px 16px 8px;
-          line-height: 1.5;
-          font-size: 16px;
-          margin: 24px 0 0;
-          background: #ea352d;
-          border: 1px solid #ea352d;
-          color: #fff;
+        &__middle{
+          color: rgb(255, 255, 255);
+          font-size: 35px;
+          margin-bottom: 20px;
+          &__image{
+            float:right;
+            width: 20vw;
+            height: 100%;
+          }
         }
-        &__pass{
-          display: block;
-          margin: 40px 0 0;
-          color: #0099e8;
-          text-decoration: none;
-          font-size: 14px;
+        &__bottom{
+          vertical-align: baseline;
+          margin-top: 10px;
+          padding: 0px;
+          border-width: 0px;
+          width: 25vw;
+          height: 8vh;
+          &__icon{
+            height: 7vh;
+            width: 7vh;
+            margin-left: 10px;
+          }
         }
       }
     }
   }
 
   .footer{
+    width: 100%;
     height: 53%;
     background-color: rgb(34, 34, 34);
     color: rgb(255, 255, 255);
@@ -120,6 +179,7 @@ html{
           font-size: 16px;
           font-family: Arial;
           &__company{
+            // color: rgb(255, 255, 255);
             opacity: 0.7;
             margin:16px 0 0;
             font-size: 12px;
@@ -199,10 +259,13 @@ html{
         }
       }
       &__box3{
+        // position: fixed;
         margin-top: 18px;
         padding-right: 40px;
         width: 39%;
         height: 100%;
+        // background-color: #EEEEEE;
+        // padding: 0px 40px 0px 0px;
         display: inline-block;
         vertical-align: top;
         &__1{
@@ -237,6 +300,7 @@ html{
         &__2{
           width: 20vw;
           height: 30vh;
+          // display: inline-block;
           list-style-type: disc;
           margin-block-start: 1em;
           margin-block-end: 1em;
@@ -274,6 +338,7 @@ html{
         vertical-align: top;
         width: 3vw;
         height: 25vh;
+        // background-color: #EEEEEE;
         &__cuntry{
           &__2{
             line-height: 1.4em;
@@ -300,6 +365,7 @@ html{
       -webkit-box-align: center;
       align-items: center;
       display: flex;
+      // background-color: #EEEEEE;
       &__logo{
         width: 100px;
         height: 100px;
@@ -307,4 +373,4 @@ html{
       }
     }
   }
-}
+} 
