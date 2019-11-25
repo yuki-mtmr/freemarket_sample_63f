@@ -2,6 +2,7 @@
   会員情報入力
 
 = form_with model: @user, url: step2_signup_index_path, method: :get, html: {class: 'first-main__box'}, local: true do |f|
+  = render 'layouts/error_messages', model: f.object #エラーメッセージ
   ニックネーム
   %br
     = f.text_field :nickname, placeholder: '例) メルカリ太郎'
@@ -10,7 +11,7 @@
     = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
   パスワード
   %br
-    = f.password_field :password, placeholder: '6文字以上'
+    = f.password_field :password, placeholder: '7文字以上'
     %p
       本人確認
     %p

@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_044327) do
+ActiveRecord::Schema.define(version: 2019_11_22_051104) do
 
-  create_table "addresses", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "first_name_kana"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(version: 2019_11_21_044327) do
     t.string "city"
     t.string "street"
     t.string "building"
-    t.integer "user_id_id"
+    t.string "phone_number"
+    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id_id"], name: "index_addresses_on_user_id_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_044327) do
     t.integer "birth_year"
     t.integer "birth_month"
     t.integer "birth_day"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "image"
     t.integer "evaluation"
     t.index ["email"], name: "index_users_on_email", unique: true

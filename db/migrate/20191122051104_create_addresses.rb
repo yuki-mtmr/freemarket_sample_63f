@@ -10,8 +10,9 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string      :city
       t.string      :street
       t.string      :building
-      t.references  :user_id, foreign_key: true
-      t.integer     :phone_number
+      t.string      :phone_number #電話番号はstring型
+      t.string  :user_id, foreign_key: true
+
       t.timestamps
     end
   end

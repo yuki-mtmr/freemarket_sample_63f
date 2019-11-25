@@ -1,11 +1,20 @@
 %p
   発送元・お届け先住所入力
 
-= form_with model: @user, url: step4_signup_index_path, method: :get, html: {class: 'third-main__box'}, local: true do |f|
+= form_with model: @user, url: signup_index_path, method: :post, html: {class: 'third-main__box'}, local: true do |f|
+  = render 'layouts/error_messages', model: f.object #エラーメッセージ
   お名前
   %br
   = hidden_field_tag :current_step, 'step3'
-  = f.fields_for :addresses do |a|
+  = f.fields_for :address do |a|
+
+    = a.text_field :last_name, placeholder: "例) 山田"
+
+    = a.text_field :first_name, placeholder: "例) 彩"
+
+    = a.text_field :last_name_kana, placeholder: "例) ヤマダ"
+
+    = a.text_field :first_name_kana, placeholder: "例) アヤ"
 
     = a.label :postal_code, "郵便番号"
     = a.text_field :postal_code
@@ -22,7 +31,7 @@
     = a.label :building, "建物名"
     = a.text_field :building
 
-    = .alabel :phone_number, "電話番号"
+    = a.label :phone_number, "電話番号"
     = a.text_field :phone_number
 
     = f.submit '次へ進む', class: 'submit-btn'
