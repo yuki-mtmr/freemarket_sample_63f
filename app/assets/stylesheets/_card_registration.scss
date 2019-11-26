@@ -1,0 +1,82 @@
+.my-page-container{
+  background-color: white;
+  // width: 50vw;
+  // min-width: 768px;
+  width: 700px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  &--upper{
+    text-align: center;
+    padding: 8px 24px;
+    height: 50px;
+    width: 700px;
+    border-bottom: 1px solid #F5F5F5;
+    h2{
+      font-weight: bold;
+      font-size: 24px;
+      color: #333333;
+      line-height: 1.4;
+      letter-spacing: 1px;
+    }
+  }
+  &--center{
+    width: 700px;
+    height: 308.09px;
+    color: #333333;
+    padding: 64px;
+    &--card{
+      color: #333333;
+      padding: 0px;
+      margin: 0px;
+      h5{
+        width: 320px;
+        height: 16px;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 auto;
+      }
+    }
+    &--add{
+      padding: 24px 0px;
+      font-size: 14px;
+      border-bottom: 1px solid #eee;
+      a {
+        text-decoration:none;
+      }
+      &--icon{
+      }
+      &--information{
+        background-color: #EA352D;
+        width: 320px;
+        height: 50px;
+        margin: 0px auto 8px;
+        line-height:50px;
+        text-align:center;
+        color: #ffffff;
+      }
+    }
+    &--lower{
+      width: 572px;
+      height: 16.09px;
+      margin: 40px 0px 0px;
+      // display: block;
+      // text-align: right;
+      &--last{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 14px;
+        color: #0099E8;
+        // width: 126px;
+        // height: 18px;
+        // text-decoration: none;
+        // vertical-align: middle; 
+      }
+  }
+}
+}
+
+span{
+  font-size: 14px;
+  margin:0 0 0px 10px;
+  // font-weight: bold;
+}

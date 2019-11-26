@@ -1,0 +1,25 @@
+-# = render '././shared/header'
+-# = render 'shared/sell_button'
+.mypage-area
+  .mypage__content
+    .mypage--left
+      =render "/groups/edit"
+    .mypage--right
+      .my-page-container
+        .my-page-container--upper
+          %h2 支払い方法
+        .my-page-container--center
+          .my-page-container--center--card
+            %h5 クレジットカード一覧
+          .my-page-container--center--add
+            -# .my-page-container--center--add--icon
+            =link_to root_path , class: "button" do
+              .my-page-container--center--add--information
+                %i.fa.fa-credit-card
+                %span クレジットカードを追加する
+          .my-page-container--center--lower
+            .my-page-container--center--lower--last
+              -# = link_to "" do
+              %h6 支払い方法について
+              %span >
+-# = render 'shared/main_footer'
