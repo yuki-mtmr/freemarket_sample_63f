@@ -3,8 +3,8 @@
 
 携帯電話の番号
 = form_with model: @user, url: step3_signup_index_path, method: :get, local: true  do |f|
-  = render 'layouts/error_messages', model: f.object #エラーメッセージ
   = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
+  = @user.errors.full_messages_for(:phone_number).first 
   %br
   本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
   %br

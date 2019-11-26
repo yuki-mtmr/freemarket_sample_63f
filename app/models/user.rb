@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
+  KANA_VALIDATION = /\A[\p{katakana}\p{blank}ー－]+\z/
 
 
   validates :email,                   presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
@@ -16,8 +17,8 @@ class User < ApplicationRecord
   validates :nickname,                presence: true, length: {maximum: 20}
   validates :first_name,              presence: true
   validates :last_name,               presence: true
-  validates :first_name_kana,         presence: true
-  validates :last_name_kana,          presence: true
+  validates :first_name_kana,         presence: true, format: { with: KANA_VALIDATION, message: 'はカタカナで入力して下さい。'}
+  validates :last_name_kana,          presence: true, format: { with: KANA_VALIDATION, message: 'はカタカナで入力して下さい。'}
   validates :birth_year,              presence: true
   validates :birth_month,             presence: true
   validates :birth_day,               presence: true
