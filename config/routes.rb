@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   get "signup", to: "signup#index"
   resources :signup do
     collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4' # ここで、入力の全てが終了する
+      get 'profile'
+      get 'sms_confirmation' #SMS認証は未実装のため今は電話番号の登録のみ
+      get 'address' #まだcredit_cardの実装前なのでここで登録完了画面に遷移
+      get 'credit_card' # ここで、入力の全てが終了する
       get 'complete' # 登録完了後のページ
     end
   end

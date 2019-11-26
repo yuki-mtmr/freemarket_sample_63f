@@ -1,51 +1,51 @@
 class SignupController < ApplicationController
-  before_action :validates_step1, only: :step2 # step1のバリデーション
-  before_action :validates_step2, only: :step3 # step2のバリデーション
-  before_action :validates_step3, only: :step4 # step3のバリデーション
+  before_action :validates_profile, only: :sms_confirmation# step1のバリデーション
+  before_action :validates_sms_confirmation, only: :address # step2のバリデーション
+  before_action :validates_address, only: :credit_card # step3のバリデーション
 
 
-  def step1
+  def profile
     @user = User.new # 新規インスタンス作成
   end
 
-  def validates_step1 #validateion用step
-    session[:user_params_after_step1] = user_params #step1で入力したparamsをsessionに代入
+  def validates_profile #validateion用step
+    session[:user_params_after_profile] = user_params #profile登録画面で入力したparamsをsessionに代入
     @user = User.new(
-      session[:user_params_after_step1]) #validation用にsessionデータを変数に入力
+      session[:user_params_after_profile]) #validation用にsessionデータを変数に入力
     @user.valid?
     skip_phone_number_validate(@user.errors) #phone_numberをスキップするメソッド
 
-    render :step1 unless @user.errors.messages.blank? && @user.errors.details.blank? #validationによるエラーがあればstep1へ戻る
+    render :profile unless @user.errors.messages.blank? && @user.errors.details.blank? #validationによるエラーがあればstep1へ戻る
     
   end
 
 
-  def step2
+  def sms_confirmation
     @user = User.new # 新規インスタンス作成
   end
 
-  def validates_step2
-    session[:user_params_after_step2] = user_params #step2で入力したparamsをsessionに代入
-    session[:user_params_after_step2].merge!(session[:user_params_after_step1]) #step1とstep2のuser情報を結合(step2にstep1を取り込む)
+  def validates_sms_confirmation
+    session[:user_params_after_sms_confirmation] = user_params #sms認証で入力したparamsをsessionに代入
+    session[:user_params_after_sms_confirmation].merge!(session[:user_params_after_profile]) #profileと電話番号のuser情報を結合
     @user = User.new(
-      session[:user_params_after_step2])
-    render :step2 unless @user.valid?
+      session[:user_params_after_sms_confirmation])
+    render :sms_confirmation unless @user.valid?
   end
 
 
-  def step3
+  def address
     @user = User.new # 新規インスタンス作成
     @user.build_address #userテーブルにaddressテーブルを紐付け
   end
 
-  def validates_step3
+  def validates_address
     session[:address_attributes] = user_params[:address_attributes] #addressの情報をsessionに代入
     @user = User.new(session[:address_attributes])
-    render :step3 unless @user.valid?
+    render :address unless @user.valid?
   end
 
 
-  def step4
+  def credit_card
     @user = User.new # 新規インスタンス作成
   end
 
@@ -55,14 +55,14 @@ class SignupController < ApplicationController
 
 
   def create
-    @user = User.new(session[:user_params_after_step2]) #user情報をテーブルに作成
+    @user = User.new(session[:user_params_after_sms_confirmation]) #user情報をテーブルに作成
     session[:address_attributes] = user_params[:address_attributes] #addressの情報をsessionに代入
     @user.build_address(session[:address_attributes]) #address情報をテーブルに作成
     if @user.save
       session[:id] = @user.id  #　ここでidをsessionに入れることでログイン状態に持っていける。
       redirect_to complete_signup_index_path #登録完了ページに遷移
     else
-      render :step1
+      render :profile
     end
   end
 
