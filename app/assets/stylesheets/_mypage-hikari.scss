@@ -1,0 +1,127 @@
+.mypage__header{
+  height:150px;
+  background: black;
+}
+
+.mypage{
+  &__area{
+    background: #F5F5F5;
+  }
+  &__content{
+    width: 70%;
+    padding:40px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  &--right{
+    &__main{
+      background: #FFFFFF;
+      width:700px;
+      margin-bottom:50px;
+    }
+    &--upper{
+      height:200px;
+      background: url("mypage_user_bg.png");
+      position: relative;
+      text-align: center;
+    }
+  }
+  &__user-icon{
+    position: relative;
+    top:45px;
+  }
+  &__user-name{
+    position: relative;
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  &__user-status{
+    margin: 8px 0 0;
+  }
+  &__user-status span{
+    font-weight: bold;
+  }
+  &__tab-container{
+    &__tab{
+      display:flex;
+      height:74px;
+      color:black;
+      font-weight: bold;
+      &--left{
+        width:50%;
+        background: #FFFFFF;
+        text-align: center;
+        line-height:72px;
+        border-top:solid red 2px;
+        box-sizing: border-box;
+      }
+      &--right{
+        width:50%;
+        background: #EEEEEE;
+        text-align: center;
+        line-height:74px;
+      }
+    }
+    &__lower{
+      padding:16px;
+      text-align: center;
+    }
+  }
+  &__purchased-product{
+    &__title{
+      padding: 0 16px;
+      box-sizing: border-box;
+      background: #FAFAFA;
+      line-height:72px;
+      font-weight: bold;
+    }
+    &_tab-container_content_text{
+      padding:60px 0 60px;
+      background: #FFFFFF;
+      text-align:center;
+      color:#cccccc;
+    }
+  }
+}
+
+
+.user-icon{
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+}
+.info-box{
+  display:flex;
+  min-height: 80px;
+  padding: 16px;
+  color: black;
+  border-bottom: solid #F5F5F5 1px;
+  &__right{
+    margin-left:20px;
+    .lower{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #888888;
+      .howmany{
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+.mercari_info_icon{
+  width:48px;
+  height:48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.info-index-btn{
+  height: 56px;
+  background:#eeeeee;
+  line-height: 56px;
+}
