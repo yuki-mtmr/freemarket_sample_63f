@@ -15,7 +15,7 @@
 |birth_year|string|null: false|
 |birth_month|string|null: false|
 |birth_day|string|null: false|
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 |image|string|null: false|
 |evaluation|integer|null: false|
 
@@ -26,20 +26,36 @@
 - has_many :likes, dependent: :destroy
 - has_many :address, dependent: :destroy
 - has_many :comments, dependent: :destroy
+- has_many :cards, dependent: :destroy
 
 ## addressesテーブル
 |Column|Type|Option|
 |------|----|------|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |postal_code|string|null: false|
 |region|string|null: false|
 |city|string|null: false|
 |street|string|null: false|
 |building|string|
+|phone_number|string|
 |user_id|references|null: false, foreign_key: true|
 
 
 ### Association
 - belongs_to :user, dependent: :destroy
+
+## cardsテーブル
+|Column|Type|Option|
+|------|----|------|
+|user_id|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
+
+### Association
+- belonsg_to_user, dependent: :destroy
 
 ## itemsテーブル
 |Column|Type|Option|
