@@ -51,7 +51,7 @@
             %br/
             %p
           .contents__container__bottom1__user-address__change-btn
-            %a(href="#")
+            = link_to"#" do
               %span
                 変更する
                 = fa_icon"chevron-right"
@@ -65,7 +65,7 @@
             %br/
             %p
           .contents__container__bottom2__user-pay-method__change-btn
-            %a(href="#")
+            = link_to "#" do
               %span
                 変更する
                 = fa_icon"chevron-right"  
@@ -73,13 +73,13 @@
     .footer__top
       %ul
         %li 
-          %a(href="")
+          = link_to "#" do
             プライバシーポリシー
         %li 
-          %a.footer__top__line(href="")
+          = link_to "#",class: "footer__top__line" do
             メルカリ利用規約
         %li 
-          %a.footer__top__line(href="")
+          = link_to "#",class: "footer__top__line" do 
             特定商取引に関する表記
     .footer__middle
       .footer__middle
