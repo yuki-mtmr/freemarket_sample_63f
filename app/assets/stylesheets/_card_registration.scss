@@ -1,7 +1,5 @@
 .my-page-container{
   background-color: white;
-  // width: 50vw;
-  // min-width: 768px;
   width: 700px;
   margin: 0 auto;
   padding-bottom: 20px;
@@ -59,17 +57,11 @@
       width: 572px;
       height: 16.09px;
       margin: 40px 0px 0px;
-      // display: block;
-      // text-align: right;
       &--last{
         display: flex;
         justify-content: flex-end;
         font-size: 14px;
         color: #0099E8;
-        // width: 126px;
-        // height: 18px;
-        // text-decoration: none;
-        // vertical-align: middle; 
       }
   }
 }
@@ -78,5 +70,4 @@
 span{
   font-size: 14px;
   margin:0 0 0px 10px;
-  // font-weight: bold;
 }
