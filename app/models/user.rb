@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable#, :validatable deviseのvalidation無効
 
-  has_one :address,       dependent: :destroy
+  has_one  :address,       dependent: :destroy
+  has_many :cards,         dependent: :destroy
   accepts_nested_attributes_for :address
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
