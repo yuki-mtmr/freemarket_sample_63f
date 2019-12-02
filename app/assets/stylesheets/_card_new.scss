@@ -1,0 +1,145 @@
+.credit-container {
+  margin: 24px auto 0;
+  padding: 0 0 40px;
+  background-color: #fff;
+  &__header {
+    padding: 12px 4%;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    font-size: 18px;
+  }
+  .card-form {
+    padding: 24px 16px 40px;
+    &__box {
+      max-width: 343px;
+      margin: 0 auto;
+      &__number {
+        margin: 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .card-number--input {
+          @include form
+        }
+        .card-list {
+          margin: 8px 0 0;
+          display: flex;
+          &__item {
+            display: inline-block;
+            padding: 0;
+            margin: 0 0 0 8px;
+            vertical-align: top;
+          }
+        }
+      }
+      &__expire {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .card-expire {
+          margin: 0;
+          &__select-month {
+            display: inline-block;
+            width: calc(50% - 2px);
+            margin: 8px 0 0;
+            select#exp_month {
+              width: calc(100% - 38px);
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              font-size: 16px;
+              line-height: 1.5;
+              outline: 0;
+              -webkit-appearance: none;
+              cursor: pointer;
+            }
+          }
+          .card-form-expire-icon {
+            font-size: 10px;
+            line-height: 1;
+            color: #888;
+            right: 16px;
+            margin: 0 6px 0 -15px;
+            position: relative;
+            top: 3px;
+            pointer-events: none;
+            z-index: 2;
+          }
+          .month {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
+          &__select-year {
+            display: inline-block;
+            width: calc(50% - 2px);
+            select#exp_year {
+              width: calc(100% - 38px);
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              font-size: 16px;
+              line-height: 1.5;
+              outline: 0;
+              -webkit-appearance: none;
+              cursor: pointer;
+            }
+          }
+          .year {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+      &__security-code {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .payment__security-code {
+          @include form
+        }
+        .question-form {
+          position: relative;
+          font-size: 14px;
+          margin: 8px 0 0;
+          text-align: right;
+          color: #0099e8;
+          &__mark {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #0099e8;
+            color: #fff;
+            line-height: 14px;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+      }
+      &__add {
+        @include btn
+        
+      }
+    }
+  }
+}
+
