@@ -1,0 +1,19 @@
+.header
+  = render 'users/shared/header'
+
+.container1
+  .container1__sidebar
+    = render 'users/shared/side-bar'
+  .container1__header
+    %h2プロフィール
+    .container1__form
+      .container1__form__top
+        %figure
+          .container1__form__top__image
+            =image_tag "//1.bp.blogspot.com/-4wfcL_kE4hg/XVjgJLRouRI/AAAAAAABUMo/n7wMY5kms9I6BiGxu6a5gIKkPipH7ls4wCLcBGAs/s1600/kid_seikaku_kachiki_boy.png", width:"60",heigth:"60"
+        %input.container1__form__top__edit-name(type="text")/
+      .container1__form__text
+        %textarea.container1__form__text__comment
+        %input.container1__form__text__btn{:type => "submit", :value => "変更する"}
+.footer__edit
+  = render 'users/shared/footer'

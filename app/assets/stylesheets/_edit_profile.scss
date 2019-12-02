@@ -1,11 +1,18 @@
-.container{
+.container1{
   margin: 0 auto;
-  width: 700px;
-  height: 560xp;
+  width: 1020px;
+  margin: 40px auto 0;
+  padding: 40px 0;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  &__sidebar{
+    float: left;
+
+  }
   &__header{
     border-bottom: 1px solid #f5f5f5;
     text-align: center;
+    float: right;
+    width: 700px;
     h2{
       font-size: 24px;
       line-height: 1.4;
@@ -19,7 +26,7 @@
     &__top{
       // background-image: url:;
       padding:72px 16px 24px;
-      background-color: aquamarine;
+      background-color: #f5f5f5;
       text-align-last: center;
       font-size: 0;
       figure{
