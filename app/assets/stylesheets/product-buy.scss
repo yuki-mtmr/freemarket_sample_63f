@@ -20,6 +20,7 @@
     margin:0 auto;
     height: 100vh;
     background-color: #FFFFFF;
+    margin-top: 20px;
     &__container{
       margin:0;          
       &__top{
@@ -156,7 +157,7 @@
       }
     }
   }
-  .footer{
+  .footer__buy{
     width: 456px;
     height: 220px;
     margin: 0 auto;

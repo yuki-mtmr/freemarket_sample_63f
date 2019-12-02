@@ -1,117 +1,118 @@
-.wrapper
-  .header
-  .item-box
-    .item-content
-    %h1.item-name
-      adidas パーカー
-    .item-main-content
-      .item-photo
-        = image_tag "https://shop.adidas.jp/photo/CW/CW3861/zz-CW3861-01.jpg", class: 'item-photo__content'
-      %table.item-detail
-        %tbody
-          %tr
-            %th.item-detail__title
-              出品者
-            %td.item-detail__content
-              sampleuser
-              .item-detail__content__users
-                .item-detail__content__users__ratings
-                  = fa_icon 'smile-o', class:'item-detail__content__users__ratings__smile' 
-                  %span 0
-                .item-detail__content__users__ratings
-                  = fa_icon 'meh-o', class:'item-detail__content__users__ratings__meh' 
-                  %span 0
-                .item-detail__content__users__ratings
-                  = fa_icon 'frown-o', class:'item-detail__content__users__ratings__frown' 
-                  %span 0
-          %tr
-            %th.item-detail__title
-              カテゴリー
-            %td.item-detail__content
-              スポーツ
-          %tr
-            %th.item-detail__title
-              ブランド
-            %td.item-detail__content
-              adidas
-          %tr
-            %th.item-detail__title
-              商品の状態
-            %td.item-detail__content
-              新品、未使用
-          %tr
-            %th.item-detail__title
-              配送料の負担
-            %td.item-detail__content
-              送料込み(出品者負担)
-          %tr
-            %th.item-detail__title
-              配送の方法
-            %td.item-detail__content
-              ゆうゆうメルカリ便
-          %tr
-            %th.item-detail__title
-              配送元地域
-            %td.item-detail__content
-              東京都
-          %tr
-            %th.item-detail__title
-              発送日の目安
-            %td.item-detail__content
-              1~2日で発送
-    .item-price
-      %span.item-price__bold
-        ¥4,500
-      %span.item-price__tax
-        (税込)
-      %span.item-price__fee
-        送料込み
-    %p.item-buy-btn
-      = link_to "", class: 'item-buy-btn__content' do
-        購入画面に進む
-    %p.shipping-not-allowed-message
-      この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    .item-description
-      %p.item-description__content
-        あったかい、安い
-    .item-button
-      .item-button__left
-        %button.item-button__left__like
-          = fa_icon 'heart', class: 'item-button__left__like__heart'
-          %span  いいね
-          %span.fade-in-down 2
-        %button.item-button__left__center
-          = fa_icon 'flag', class: 'item-button__left__like__heart'
-          %span 不適切な商品の報告
-      .item-button__right
-        = fa_icon 'shopping-bag', class: 'item-button__right__text'
-        = link_to "https://www.mercari.com/jp/safe/description/", class: 'item-button__right__text' do
-          安心安全への取り組み
-  .item-detail-message
-    .message-container
-      .message-content
-        = form_with() do |form|
-          %p.message-content__alert
-            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          = form.text_field :text, class: 'message-content__text'
-          = form.submit "コメントする", class: 'message-content__btn'
-  .nav-product-link
-    .previous-product.items-link_to
-      = fa_icon "chevron-left" 
-      = link_to "前の商品へ", "#", class: 'item-btn'
-    .next-product.items-link_to
-      = link_to "次の商品へ", "#", class: 'item-btn'
-      = fa_icon "chevron-right"
-  .product-social-media-box
-    .text-center
-    %ul.social-media-box
-      %li.social-media-box__content
-        = link_to "#", target: "_blank"  do
-          = fa_icon "facebook-square", class: "social-media-box__content__icon"
-      %li.social-media-box__content
-        = link_to "#", target: "_blank"  do
-          = fa_icon "twitter-square",　class: "social-media-box__content__icon"
-      %li.social-media-box__content
-        = link_to "#", target: "_blank" do
-          = fa_icon "pinterest-square", class: "social-media-box__content__icon"
-  .footer
+.header
+  = render 'users/shared/header'
+.item-box
+  .item-content
+  %h1.item-name
+    adidas パーカー
+  .item-main-content
+    .item-photo
+      = image_tag "https://shop.adidas.jp/photo/CW/CW3861/zz-CW3861-01.jpg", class: 'item-photo__content'
+    %table.item-detail
+      %tbody
+        %tr
+          %th.item-detail__title
+            出品者
+          %td.item-detail__content
+            sampleuser
+            .item-detail__content__users
+              .item-detail__content__users__ratings
+                = fa_icon 'smile-o', class:'item-detail__content__users__ratings__smile' 
+                %span 0
+              .item-detail__content__users__ratings
+                = fa_icon 'meh-o', class:'item-detail__content__users__ratings__meh' 
+                %span 0
+              .item-detail__content__users__ratings
+                = fa_icon 'frown-o', class:'item-detail__content__users__ratings__frown' 
+                %span 0
+        %tr
+          %th.item-detail__title
+            カテゴリー
+          %td.item-detail__content
+            スポーツ
+        %tr
+          %th.item-detail__title
+            ブランド
+          %td.item-detail__content
+            adidas
+        %tr
+          %th.item-detail__title
+            商品の状態
+          %td.item-detail__content
+            新品、未使用
+        %tr
+          %th.item-detail__title
+            配送料の負担
+          %td.item-detail__content
+            送料込み(出品者負担)
+        %tr
+          %th.item-detail__title
+            配送の方法
+          %td.item-detail__content
+            ゆうゆうメルカリ便
+        %tr
+          %th.item-detail__title
+            配送元地域
+          %td.item-detail__content
+            東京都
+        %tr
+          %th.item-detail__title
+            発送日の目安
+          %td.item-detail__content
+            1~2日で発送
+  .item-price
+    %span.item-price__bold
+      ¥4,500
+    %span.item-price__tax
+      (税込)
+    %span.item-price__fee
+      送料込み
+  %p.item-buy-btn
+    = link_to product_buy_items_path, class: 'item-buy-btn__content' do
+      購入画面に進む
+  %p.shipping-not-allowed-message
+    この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+  .item-description
+    %p.item-description__content
+      あったかい、安い
+  .item-button
+    .item-button__left
+      %button.item-button__left__like
+        = fa_icon 'heart', class: 'item-button__left__like__heart'
+        %span  いいね
+        %span.fade-in-down 2
+      %button.item-button__left__center
+        = fa_icon 'flag', class: 'item-button__left__like__heart'
+        %span 不適切な商品の報告
+    .item-button__right
+      = fa_icon 'shopping-bag', class: 'item-button__right__text'
+      = link_to "https://www.mercari.com/jp/safe/description/", class: 'item-button__right__text' do
+        安心安全への取り組み
+.item-detail-message
+  .message-container
+    .message-content
+      = form_with() do |form|
+        %p.message-content__alert
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form.text_field :text, class: 'message-content__text'
+        = form.submit "コメントする", class: 'message-content__btn'
+.nav-product-link
+  .previous-product.items-link_to
+    = fa_icon "chevron-left" 
+    = link_to "前の商品へ", "#", class: 'item-btn'
+  .next-product.items-link_to
+    = link_to "次の商品へ", "#", class: 'item-btn'
+    = fa_icon "chevron-right"
+.product-social-media-box
+  .text-center
+  %ul.social-media-box
+    %li.social-media-box__content
+      = link_to "#", target: "_blank"  do
+        = fa_icon "facebook-square", class: "social-media-box__content__icon"
+    %li.social-media-box__content
+      = link_to "#", target: "_blank"  do
+        = fa_icon "twitter-square",　class: "social-media-box__content__icon"
+    %li.social-media-box__content
+      = link_to "#", target: "_blank" do
+        = fa_icon "pinterest-square", class: "social-media-box__content__icon"
+.footer__show-item
+  = render 'users/shared/footer'

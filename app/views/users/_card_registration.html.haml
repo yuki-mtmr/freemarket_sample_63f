@@ -1,9 +1,11 @@
 -# = render '././shared/header'　　　　後から実装予定
 -# = render 'shared/sell_button'　　　　後から実装予定
+.header__card
+  = render "users/shared/header"
 .mypage-area
   .mypage__content
     .mypage--left
-      =render "/groups/edit"
+      =render "users/shared/side-bar"
     .mypage--right
       .my-page-container
         .my-page-container--upper
@@ -21,4 +23,5 @@
               -# = link_to "" do  後から実装予定
               %h6 支払い方法について
               %span >
--# = render 'shared/main_footer'　　　　後から実装予定
+.footer__card
+  = render "users/shared/footer"

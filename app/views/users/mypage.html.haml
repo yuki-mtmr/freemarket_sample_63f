@@ -5,7 +5,8 @@
 
 -# = render 'ヘッダー'
 -# = render 'メルカリのicon'
-
+.header
+  = render 'users/shared/header'
 .mypage-header
   メルカリ   >   マイページ
 
@@ -13,12 +14,12 @@
   .mypage__area
     .mypage__content
       .mypage--left
-        = render 'edit'
+        = render 'users/shared/side-bar'
       .mypage--right
         .mypage--right__main
           .mypage--right--upper
             .mypage__user-icon
-              = image_tag 'user_default.png', class: 'user-icon'
+              = image_tag '', class: 'user-icon'
               -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
               .mypage__user-name
                 テストユーザー
@@ -38,7 +39,7 @@
               = link_to 'root_path', class:'info-link'  do
                 .info-box
                   .info-icon
-                    = image_tag 'mercari_info_icon.png', class: 'mercari_info_icon'
+                    = image_tag '', class: 'mercari_info_icon'
                   -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
                   .info-box__right
                     .info-message
@@ -48,7 +49,7 @@
               = link_to 'root_path', class:'info-link'  do
                 .info-box
                   .info-icon
-                    = image_tag 'mercari_info_icon.png', class: 'mercari_info_icon'
+                    = image_tag '', class: 'mercari_info_icon'
                   -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
                   .info-box__right
                     .info-message
@@ -72,4 +73,5 @@
                   = image_tag 'https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?39195692', class: 'mercari_info_icon'
                   %br
                   取引中の商品がありません
--# = render 'footer'
+.footer__mypage
+  = render 'users/shared/footer'

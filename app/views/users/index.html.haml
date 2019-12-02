@@ -1,1 +1,70 @@
-= render partial: 'side-bar'
+.header
+  = render 'users/shared/header'
+.mypage-header
+  メルカリ   >   マイページ
+
+.mypage
+  .mypage__area
+    .mypage__content
+      .mypage--left
+        = render 'users/shared/side-bar'
+      .mypage--right
+        .mypage--right__main
+          .mypage--right--upper
+            .mypage__user-icon
+              = image_tag '', class: 'user-icon'
+              -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
+              .mypage__user-name
+                テストユーザー
+                -# = current_user.nickname  -#ここはユーザー登録した時にコメントアウト外せばログインしているユーザー出せるはず！
+              .mypage__user-status
+                評価  
+                %span 0
+                出品数
+                %span 0
+          .mypage__tab-container
+            .mypage__tab-container__tab
+              .mypage__tab-container__tab--left
+                お知らせ
+              .mypage__tab-container__tab--right
+                やることリスト
+            .mypage__tab-container__info
+              = link_to 'root_path', class:'info-link'  do
+                .info-box
+                  .info-icon
+                    = image_tag '', class: 'mercari_info_icon'
+                  -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
+                  .info-box__right
+                    .info-message
+                      事務局から個別メッセージ「ログイン通知」
+                    .info-date
+                      ○22時間前
+              = link_to 'root_path', class:'info-link'  do
+                .info-box
+                  .info-icon
+                    = image_tag '', class: 'mercari_info_icon'
+                  -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
+                  .info-box__right
+                    .info-message
+                      事務局から個別メッセージ「ログイン通知」
+                    .info-date
+                      ○22時間前
+            .mypage__tab-container__lower
+              = link_to 'root_rath', class:'info-index-btn' do
+                .info-index-btn 一覧を見る
+          .mypage__purchased-product
+            .mypage__purchased-product__title
+              購入した商品
+            .mypage__purchased-product_tab-container
+              .mypage__tab-container__tab
+                .mypage__tab-container__tab--left
+                  取引中
+                .mypage__tab-container__tab--right
+                  過去の取引
+              .mypage__purchased-product_tab-container__content
+                .mypage__purchased-product_tab-container_content_text
+                  = image_tag 'https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?39195692', class: 'mercari_info_icon'
+                  %br
+                  取引中の商品がありません
+.footer__users
+  = render 'users/shared/footer'
