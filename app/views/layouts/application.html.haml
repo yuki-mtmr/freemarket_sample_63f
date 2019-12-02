@@ -1,14 +1,14 @@
-
-!!!
 %html
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
-    %title Mercari63f
-    = csp_meta_tag
+  %head 
+    %csp_meta_tag
+    %title FreemarketSample63f
     = stylesheet_link_tag      'application', media: 'all', data: { turbolinks: { track: true }}
     = javascript_include_tag   'application', data: { turbolinks: { track: true }}
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %script{type: "text/javascript"} Payjp.setPublicKey('pk_test_291a9bada8ad72705456b727');
   %body
     .wrapper
       
       = yield 
     
+>>>>>>> master

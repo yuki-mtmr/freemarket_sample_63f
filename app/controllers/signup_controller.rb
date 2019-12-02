@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  
   before_action :validates_profile, only: :sms_confirmation# step1のバリデーション
   before_action :validates_sms_confirmation, only: :address # step2のバリデーション
   #before_action :validates_address, only: :credit_card # step3のバリデーション

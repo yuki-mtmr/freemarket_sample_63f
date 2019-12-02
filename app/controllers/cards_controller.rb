@@ -18,7 +18,7 @@ class CardsController < ApplicationController
 
   # 登録画面で入力した情報をDBに保存
   def create
-    Payjp.api_key = "sk_test_b4d362a61f2bddc5fb5df88b"
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       render 'signup/credit_card'
     else

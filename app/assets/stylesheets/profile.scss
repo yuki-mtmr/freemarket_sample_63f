@@ -1,0 +1,10 @@
+.profile-container {
+  width: 700px;
+  margin: 0 auto;
+  &__heading {
+    font-size: 20px;
+  }
+  .profile-form {
+    padding: 24px 16px 40px;
+  }
+}

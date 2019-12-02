@@ -1,5 +1,5 @@
-.credit-update
-  .credit-update__label
+.credit-container
+  .credit-container__header
     クレジットカード情報入力
   .card-form
     .card-form__box
@@ -12,20 +12,20 @@
           .registration-error{type: "hidden", value: "必須項目です"}
           %ul.card-list
             -# assets/imagesにimageを設置しており、それをimage_tagで呼び出しています。
-            %li.card-list--item{ style: "margin-left: 0;"}
-              = image_tag "visa.svg", width:"60", height:"30"
-            %li.card-list--item
+            %li.card-list__item{ style: "margin-left: 0;"}
+              = image_tag "visa.svg", width:"49", height:"20"
+            %li.card-list__item
               = image_tag "master-card.svg", width:"34", height:"20"
-            %li.card-list--item  
+            %li.card-list__item  
               = image_tag "saison-card.svg", width:"30", height:"20"
-            %li.card-list--item  
+            %li.card-list__item  
               = image_tag "jcb.svg", width:"32", height:"20"
-            %li.card-list--item
+            %li.card-list__item
               = image_tag "american_express.svg", width:"21", height:"20"
-            %li.card-list--item
+            %li.card-list__item
               = image_tag "dinersclub.svg", width:"32", height:"20"
-            %li.card-list--item 
-              = image_tag "discover.svg", width:"40", height:"30"
+            %li.card-list__item 
+              = image_tag "discover.svg", width:"32", height:"20"
 
         .card-form__box__expire
           %label.box-group--label 有効期限
@@ -72,8 +72,8 @@
             必須
           = text_field_tag "cvc", "", class: 'payment__security-code', type: "text", id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
           .question-form
-            %span.question-form__mark ?
-            %span.question-form__text 
-              カード裏面の番号とは？
+            %span.question-form__mark
+              ?
+            カード裏面の番号とは？
         #card_token
         = submit_tag "追加する", class: "card-form__box__add", id: "token_submit", type: 'button'
