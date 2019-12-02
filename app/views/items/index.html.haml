@@ -31,7 +31,20 @@
           .header-middle__bottom__right__loguser
             = link_to login_users_path, class: 'header-middle__bottom__right__loguser__2' do
               ログイン
-  = yield 
+
+  .items
+    .items__titlle_header
+      %h3 レディース新着新着アイテム
+      .light_box
+        %h6 もっと見る >
+    .items__item
+      - @items.each do |item|
+        .items__item--one
+          .image
+          .text
+            %span
+              = item.name
+
   .smart
     .smart-middle
       .smart-middle__image
