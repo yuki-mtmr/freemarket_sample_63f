@@ -70,7 +70,7 @@
   .side-bar--lower
     .side-bar--lower__title
       設定
-    = link_to root_path ,class: 'side-bar-link' do
+    = link_to _edit_profile_users_path ,class: 'side-bar-link' do
       .side-bar-box
         %li.side-bar--upper__menu プロフィール
         = fa_icon('chevron-right')
@@ -78,7 +78,7 @@
       .side-bar-box
         %li.side-bar--upper__menu 発送元・お届け先住所変更
         = fa_icon('chevron-right')
-    = link_to root_path ,class: 'side-bar-link' do
+    = link_to _card_registration_users_path ,class: 'side-bar-link' do
       .side-bar-box
         %li.side-bar--upper__menu 支払い方法
         = fa_icon('chevron-right')
@@ -86,7 +86,7 @@
       .side-bar-box
         %li.side-bar--upper__menu メール/パスワード
         = fa_icon('chevron-right')
-    = link_to root_path ,class: 'side-bar-link' do
+    = link_to _new_myprofile_users_path ,class: 'side-bar-link' do
       .side-bar-box
         %li.side-bar--upper__menu 本人情報
         = fa_icon('chevron-right')
@@ -94,7 +94,7 @@
       .side-bar-box
         %li.side-bar--upper__menu 電話番号の確認
         = fa_icon('chevron-right')
-    = link_to root_path ,class: 'side-bar-link' do
+    = link_to _logout_users_path ,class: 'side-bar-link' do
       .side-bar-box
         %li.side-bar--upper__menu ログアウト
         = fa_icon('chevron-right')

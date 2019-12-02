@@ -1,3 +1,207 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper__users{
+  width: 100vw;
+  height: 100vh;
+  background-color: #EEEEEE;
+  .header__users{
+    width: 100%;
+    height: 12vh;
+    margin: 0 auto;
+    &__logo{
+      width: 13vw;
+      height: 11vh;
+      margin: 40px auto;
+    }
+  }
+  .content__users{
+    width:100%;
+    height: 50vh;
+    .content-tops__users{
+      width: 44vw;
+      height: 5vh;
+      margin: 0 auto;
+      padding: 32px;
+      text-align: center;
+      background-color: #FFFFFF;
+      font-size: 22px;
+    }
+    .content-middles__users{
+      margin: 0 auto;
+      width: 48.5%;
+      height: 40%;
+      background-color: #FFFFFF;
+      &__main{
+        width:100%;
+        &__top{
+          height: 20vh;
+          padding: 40px 40px 64px;
+          border-top: 1px solid #eee;
+          background-color: #FFFFFF;
+          &__f{
+            padding: 0 135px;
+            margin: 0 auto;
+            &__mail{
+              background: #ea352d;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+              height: 7vh;
+              border-radius: 4px;
+              text-decoration: none;
+              color: #fff;
+              .mail-address{
+                color: #fff;
+                text-decoration: none;
+              }
+            }
+            &__facebook{
+              background: #385185;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              margin: 16px 0 0;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+              height: 7vh;
+              border-radius: 4px;
+              &__icon{
+                width: 26px;
+                height: 26px;
+                background-color: #FFFFFF;
+              }
+            }
+            &__google{
+              margin: 16px 0 0;
+              background: #fff url(/jp/assets/img/common/common/google.svg) no-repeat 3px top;
+              border: #979797 solid 1px;
+              color: #333;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              border: 1px solid transparent;
+              -webkit-transition: all ease-out .3s;
+              transition: all ease-out .3s;
+              cursor: pointer;
+              text-align: center;
+              height: 7vh;
+              border: solid 1px;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+      &__bottom{
+        width: 72%;
+        height: 56%;
+        // background-color: #0099e8;
+        padding: 24px 64px 32px;
+        &__form1{
+          width:90%;
+          height: 4vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
+        }
+        &__form2{
+          width:90%;
+          height: 4vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
+        }
+        &__form3{
+          width:90%;
+          height: 6vh;
+          border: 1px solid #ccc;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 10px 0;
+        }
+        &__form4{
+          width:90%;
+          height: 6vh;
+          padding: 10px 16px 8px;
+          line-height: 1.5;
+          font-size: 16px;
+          margin: 24px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+        }
+        &__pass{
+          display: block;
+          margin: 40px 0 0;
+          color: #0099e8;
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .footer__users{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    .footer-nav__users{
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 40px;
+      height: 12px;
+      &__text1{
+        display: block;
+        color: #333;
+        font-size: 12px;
+        display: inline-block;
+        text-align: -webkit-match-parent;
+      }
+      &__text2{
+        display: block;
+        color: #333;
+        font-size: 12px;
+        display: inline-block;
+      }
+      &__text3{
+        display: block;
+        color: #333;
+        font-size: 12px;
+        display: inline-block;
+      }
+    }
+    .footer-logo__users{
+      width: 100px;
+      height: 100px;
+      margin: 40px auto 0;
+    }
+    .footer-p__users{
+      font-size: 10px;
+      text-align: center;
+    }
+  }
+} 
