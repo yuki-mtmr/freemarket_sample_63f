@@ -4,6 +4,14 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  
+  resources :items, only: [:index, :destroy, :edit, :update] do
+    collection do
+      get 'test'
+      get "edit_item_path", to: "item_path"
+    end
+  end
 
   
   resources :users, only: [:index] do
@@ -28,6 +36,8 @@ Rails.application.routes.draw do
 
   resources :cards , only: [:new, :index, :create, :destroy]
 
+  resources :users, only: [:index]  do
+  end
 
   get "signup", to: "signup#index"
   resources :signup do

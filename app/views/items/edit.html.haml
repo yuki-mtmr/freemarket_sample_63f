@@ -1,0 +1,7 @@
+.container
+  = form_with model: @item, url: item_path, local: true do |form|
+    %h3 編集する
+    .form-input
+      = form.text_field :goods
+    .btn
+      = form.submit
