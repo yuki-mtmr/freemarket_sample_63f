@@ -15,4 +15,7 @@
 @import "items";
 @import "users";
 @import "card_new"; 
-@import "profile";
+
+@import "signup/profile";
+@import "signup/sms_confirmation";
+@import "signup/address";
