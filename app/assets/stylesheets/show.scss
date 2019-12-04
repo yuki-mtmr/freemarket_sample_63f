@@ -4,7 +4,7 @@
   .item-box{
     padding: 24px 40px 40px;
     margin: 40px auto 0;
-    width: 700px;
+    width: 620px;
     border-style: solid;
     border-width: 0;
     background-color:rgba(255, 255, 255, 0.87);
@@ -49,6 +49,10 @@
           border-collapse: collapse;
           border: 1px solid #f5f5f5;
           padding: 8px;
+          &__user{
+            text-decoration: none;
+            color: #0099e8;
+          }
           &__users{
             display: flex;
             &__ratings{
@@ -63,6 +67,10 @@
                 color: blue;
               }
             }
+          }
+          &__region{
+            text-decoration: none;
+            color: #0099e8;
           }
         }
       }
@@ -108,9 +116,10 @@
       font-size: 18px;
     }
     .item-button{
-      margin: 16px 0 0;
+      margin: 16px;
+      display: flex;
+      justify-content: space-between;
       &__left{
-        float: left;
         &__like{
           color: #333;
           border: 1px solid #f5f5f5;
@@ -126,7 +135,6 @@
           }
         }
         &__center{
-          float: right;
           display: inline-block;
           margin: 0 0 0 16px;
           color: #333;
@@ -137,7 +145,6 @@
       }
       &__right{
         margin: 8px 0 0;
-        float: right;
         display: inline-block;
         touch-action: manipulation;
         &__text{
@@ -199,9 +206,9 @@
     padding: 32px 0 24px;
     width: 700px;
     border: 1px solid #ccc;
+    background: #fff;
     .social-media-box{
       display: flex;
-      background: #fff;
       justify-content: center;
       align-items: center;
       &__content{
