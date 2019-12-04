@@ -40,10 +40,11 @@
     .items__item
       - @items.each do |item|
         .items__item--one
-          .image
-          .text
-            %span
-              = item.name
+          = link_to item_path(item), class:"" do
+            .image
+            .text
+              %span
+                = item.name
 
   .smart
     .smart-middle
