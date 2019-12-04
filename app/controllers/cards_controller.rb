@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
   require 'payjp'
   before_action :authenticate_user!
+  before_action :get_payjp_info, only: [:create]
 
   # 後ほど登録したクレジットの表示画面を作成します。
   def index
@@ -18,7 +19,7 @@ class CardsController < ApplicationController
   # 登録画面で入力した情報をDBに保存
   def create
     #  Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    #  Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     if params['payjp-token'].blank?
       render 'signup/credit_card'
     else
@@ -38,6 +39,16 @@ class CardsController < ApplicationController
 
   # 後ほど削除機能を実装します。
   def destroy
+  end
+
+  private
+
+  def get_payjp_info
+    if Rails.env == 'development'
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+    end
   end
 
 end
