@@ -414,16 +414,16 @@ html {
       height: 252px;
       width: 188px;
       margin: 0 10px;
+      border: solid 1px;
       .image{
         height: 188px;
         width: 100%;
-        background: red;
       }
       .text{
         display: flex;
         width: 100%;
-        padding: 0px 12px;
-        background: blue;
+        background-color: skyblue;
+        text-decoration: none;
         span{
           display: inline-block;
           height: 2.8em;

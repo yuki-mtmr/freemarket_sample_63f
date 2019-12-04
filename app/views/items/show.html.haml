@@ -3,17 +3,18 @@
 .item-box
   .item-content
   %h1.item-name
-    adidas パーカー
+    #{@item.name}
   .item-main-content
     .item-photo
-      = image_tag "https://shop.adidas.jp/photo/CW/CW3861/zz-CW3861-01.jpg", class: 'item-photo__content'
+      = image_tag @item.image, class: 'item-photo__content'
     %table.item-detail
       %tbody
         %tr
           %th.item-detail__title
             出品者
           %td.item-detail__content
-            sampleuser
+            = link_to mypage_users_path, class:"item-detail__content__user" do
+              sampleuser
             .item-detail__content__users
               .item-detail__content__users__ratings
                 = fa_icon 'smile-o', class:'item-detail__content__users__ratings__smile' 
@@ -28,22 +29,25 @@
           %th.item-detail__title
             カテゴリー
           %td.item-detail__content
-            スポーツ
         %tr
           %th.item-detail__title
             ブランド
           %td.item-detail__content
-            adidas
+        %tr
+          %th.item-detail__title
+            サイズ
+          %td.item-detail__content
+            #{@item.item_size}
         %tr
           %th.item-detail__title
             商品の状態
           %td.item-detail__content
-            新品、未使用
+            #{@item.status}
         %tr
           %th.item-detail__title
             配送料の負担
           %td.item-detail__content
-            送料込み(出品者負担)
+            #{@item.postage}
         %tr
           %th.item-detail__title
             配送の方法
@@ -53,19 +57,19 @@
           %th.item-detail__title
             配送元地域
           %td.item-detail__content
-            東京都
+            = link_to "#{@item.region}", class: 'item-detail__content__region'
         %tr
           %th.item-detail__title
             発送日の目安
           %td.item-detail__content
-            1~2日で発送
+            #{@item.shipping_date}
   .item-price
     %span.item-price__bold
-      ¥4,500
+      ¥#{@item.price}
     %span.item-price__tax
       (税込)
     %span.item-price__fee
-      送料込み
+      #{@item.postage}
   %p.item-buy-btn
     = link_to product_buy_items_path, class: 'item-buy-btn__content' do
       購入画面に進む
@@ -73,7 +77,7 @@
     この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
   .item-description
     %p.item-description__content
-      あったかい、安い
+      #{@item.description}
   .item-button
     .item-button__left
       %button.item-button__left__like
