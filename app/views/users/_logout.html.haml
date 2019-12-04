@@ -6,6 +6,6 @@
   .form-logout
     .form-logout__middle
       %button.form-logout__middle__btn
-        ログアウト
+        = link_to "ログアウト", destroy_user_session_path, method: :delete 
 .footer__logout
   = render 'users/shared/footer'

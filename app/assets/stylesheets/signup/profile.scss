@@ -1,0 +1,169 @@
+.profile-container {
+  @include signup-container;
+  &__header {
+    @include signup-container-header
+  }
+  .profile-form {
+    padding: 24px 16px 40px;
+    &__box {
+      max-width: 343px;
+      margin: 0 auto;
+      padding: 0;
+      &__nickname {
+        margin: 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .nickname--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__email {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .email--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__password {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .password--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+        .form-info-text {
+         @include form-info-text
+        }
+        .form-password-revelation-toggle {
+          margin: 0;
+          .checkbox-default {
+            margin: 16px 0 0;
+          }
+        }
+      }
+      &__user-confirmation {
+        margin: 24px 0 0;
+        .text-left-sub-head {
+          font-size: 16px;
+        }
+        .single-text {
+          font-size: 14px;
+          margin: 8px 0 0;
+        }
+      }
+      &__name {
+        margin: 24px 0 0;
+        &__head {
+          margin: 0;
+          padding: 0;
+        }
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .last-name--input {
+          @include form-left
+        }
+        .first-name--input {
+          @include form-right
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__kana {
+        margin: 24px 0 0;
+        &__head {
+          margin: 0;
+          padding: 0;
+        }
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .last-name-kana--input {
+          @include form-left
+        }
+        .first-name-kana--input {
+          @include form-right
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__birth {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        &--main {
+          margin: 0;
+          padding: 0;
+          .birth_year {
+            @include form;
+            width: 76px;
+            display: inline-block
+          }
+          .year {
+            margin: 0 2;
+          }
+          .birth_month {
+            @include form;
+            width: 76px;
+            display: inline-block
+          }
+          .month {
+            margin: 0 2;
+          }
+          .birth_day {
+            @include form;
+            width: 76px;
+            display: inline-block
+          }
+          .day {
+            margin: 0 2;
+          }
+        }
+      }
+      .form-info-text {
+        @include form-info-text
+       }
+      .submit-btn {
+        @include btn
+      }
+    }
+  }
+}
+
+.field_with_errors {
+  display: inline;
+  }

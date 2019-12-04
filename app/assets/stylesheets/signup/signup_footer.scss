@@ -1,0 +1,20 @@
+.signup-footer-main {
+  width: 700;
+  text-align: center;
+  margin:0 auto;
+  padding: 23px 30px;
+  &__box {
+    &__link {
+      font-size: 14px;
+      display: flex;
+      margin-left: 147px;
+    }
+  }
+  .freemarket-sample-logo {
+    margin: 30px 0  0;
+    font-size: 14px;
+    :hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,2 +1,14 @@
-いますぐ始める
-= link_to "ログアウト", destroy_user_session_path, method: :delete 
+= render 'signup/shared/signup_header'
+.complete-container
+  .complete-container__header
+    会員登録完了
+  .complete-form
+    .complete-form__box
+      .complete-text
+        ありがとうございます。
+        %br
+          会員登録が完了しました。
+      .complete-btn
+        = link_to "メルカリをはじめる", root_path
+  = render 'signup/shared/smart'
+= render 'signup/shared/signup_footer'

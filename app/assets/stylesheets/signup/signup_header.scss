@@ -1,0 +1,38 @@
+.signup-header {
+  text-align: center;
+  height: 128px;
+  &__logo {
+    padding-top: 40px;
+    margin-left: 40px;
+    display: inline-block;
+    &__svg {
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+    }
+  }
+  &__progress-bar {
+    padding: 40px 0 0 44px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: top;
+    .clearfix {
+      margin: 0;
+      .profile {
+        font-weight: 600;
+        color: #aaa;
+        display: inline-block;
+        font-size: 12px;
+        margin: 0 40px 0 0;
+        .progress-status {
+          background-color: #ccc;
+          width: 12px;
+          height: 12px;
+          margin: 8px auto 0;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
