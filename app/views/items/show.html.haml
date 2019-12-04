@@ -3,7 +3,7 @@
 .item-box
   .item-content
   %h1.item-name
-    #{@item.name}
+    = @item.name
   .item-main-content
     .item-photo
       = image_tag @item.image, class: 'item-photo__content'
@@ -37,17 +37,17 @@
           %th.item-detail__title
             サイズ
           %td.item-detail__content
-            #{@item.item_size}
+            = @item.item_size
         %tr
           %th.item-detail__title
             商品の状態
           %td.item-detail__content
-            #{@item.status}
+            = @item.status
         %tr
           %th.item-detail__title
             配送料の負担
           %td.item-detail__content
-            #{@item.postage}
+            = @item.postage
         %tr
           %th.item-detail__title
             配送の方法
@@ -62,14 +62,14 @@
           %th.item-detail__title
             発送日の目安
           %td.item-detail__content
-            #{@item.shipping_date}
+            = @item.shipping_date
   .item-price
     %span.item-price__bold
       ¥#{@item.price}
     %span.item-price__tax
       (税込)
     %span.item-price__fee
-      #{@item.postage}
+      = @item.postage
   %p.item-buy-btn
     = link_to product_buy_items_path, class: 'item-buy-btn__content' do
       購入画面に進む
