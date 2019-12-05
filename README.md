@@ -76,6 +76,14 @@
 - belongs_to :user
 - has_many :comments, dependent: :destroy
 
+## Salersテーブル
+|user|references|null: false , foreign_key: true|
+|item|references|null: false , foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
 ## categoriesテーブル
 |Column|Type|Option|
 |------|----|------|

@@ -2,15 +2,21 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable#, :validatable deviseのvalidation無効
+          :recoverable, :rememberable#, :validatable deviseのvalidation無効
 
   has_one  :address,       dependent: :destroy
   has_many :cards,         dependent: :destroy
+  has_many :items,         dependent: :destroy
+  has_many :salers,        dependent: :destroy
   accepts_nested_attributes_for :address
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
   KANA_VALIDATION = /\A[\p{katakana}\p{blank}ー－]+\z/
+
+  has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
+  has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+  has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 
   validates :email,                   presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
