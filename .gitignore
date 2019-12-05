@@ -18,14 +18,16 @@
 !/tmp/.keep
 
 # Ignore uploaded files in development
+/public/uploads/
+
 /storage/*
-!/storage/.keep/
+!/storage/.keep
 
-/node_modules/
-/yarn-error.log/
+/node_modules
+/yarn-error.log
 
-/public/assets/
-.byebug_history/
+/public/assets
+.byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
