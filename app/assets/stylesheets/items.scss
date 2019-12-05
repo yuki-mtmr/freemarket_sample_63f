@@ -45,37 +45,34 @@ html {
         }
       }
       &__bottom{
-        width:100%;
-        height: 5vh;
-        margin: 8px 0 0 0;
+        width: 100%;
+        margin: 18px 0 0 0;
         // background-color:red;
         &__left{
-          width:28vw;
-          height:80%;
           float:left;
           display: flex;
-          margin-top: 10px;
           &__category{
-            width: 8vw;
             height: 3vh;
             z-index: 3;
             font-size: 14px;
             font-weight: 600;
+            padding-right: 10px;
             // padding: 0px 10px;
           }
           &__brand{
-            width: 8vw;
             height: 3vh;
             font-size: 14px;
             font-weight: 600;
+            padding-left: 10px;
           }
         }
         &__right{
-          width: 30vh;
-          height: 100%;
+          line-height: center;
           // background-color: aqua;
           float: right;
           display: flex;
+          padding-right: 7px;
+          height: 32px;
           &__newuser{
             background-color: rgb(234, 53, 45);
             color: rgb(255, 255, 255);
@@ -108,6 +105,21 @@ html {
             &__2{
               text-decoration: none;
               color: rgb(0, 149, 238);
+            }
+          }
+          &__notice {
+            padding-right: 7px;
+          }
+          &__favorite {
+            padding-right: 7px;
+          }
+          &__todo {
+            padding-right: 7px;
+          }
+          &__nickname {
+            padding-right: 7px;
+            %a,a:visited {
+              color: 000;
             }
           }
         }
@@ -414,16 +426,16 @@ html {
       height: 252px;
       width: 188px;
       margin: 0 10px;
+      border: solid 1px;
       .image{
         height: 188px;
         width: 100%;
-        background: red;
       }
       .text{
         display: flex;
         width: 100%;
-        padding: 0px 12px;
-        background: blue;
+        background-color: skyblue;
+        text-decoration: none;
         span{
           display: inline-block;
           height: 2.8em;

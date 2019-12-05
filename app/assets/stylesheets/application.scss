@@ -1,4 +1,5 @@
 @import "mixins";
+@import "./variables";
 
 @import "reset";
 @import "logout";
@@ -15,418 +16,51 @@
 @import "items";
 @import "users";
 @import "card_new"; 
-@import "profile";
 
-html {
-  height: 100% ;
-  background-color: #EEEEEE;
-  body {
-    height: 100%; 
+.foot{
+  bottom: 32px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  position: fixed;
+  z-index: 2;
+  text-decoration: none;
+  // background-color: #333;
+  .foot-btn{
+    font-size: 18px;
+    width: 150px;
+    height: 150px;
+    padding-top: 32px;
+    background-color: rgba(234, 54, 45, 0.829);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    .camera{
+      font-size: 60px;
+    }
+    &__name{
+      margin:0px 0 0 0 ;
+      .link{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 100px;
+      }
+      .link:hover{
+        text-decoration: none;
+
+      }
+    }
+  }
+  .foot-btn:hover{
+    opacity: 0.7;
   }
 }
-.wrapper{
-  height: 100vh;
-  width:100vw;
-  // position: fixed;
-  .header{
-    height: 13vh;
-    background-color: rgb(255, 255, 255);
-    z-index: 3;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    .header-middle{
-      height: 100%;
-      width: 70%;
-      margin: 0 auto;
-      padding: 8px 0 0 ;
-      z-index: 0;
-      &__top{
-        width:100%;
-        height: 5vh;
-        // background-color: red;
-        &__log{
-          width: 11vw;
-          // height: 10vh;
-          // background-color: red;
-          position: fixed;
-        }
-        &__search{
-          width: 50vw;
-          height: 95%;
-          float: right;
-          // background-color: blue;
-          .class{
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-      &__bottom{
-        width:100%;
-        height: 5vh;
-        margin: 8px 0 0 0;
-        // background-color:red;
-        &__left{
-          width:28vw;
-          height:80%;
-          float:left;
-          display: flex;
-          margin-top: 10px;
-          &__category{
-            width: 8vw;
-            height: 3vh;
-            z-index: 3;
-            font-size: 14px;
-            font-weight: 600;
-            // padding: 0px 10px;
-          }
-          &__brand{
-            width: 8vw;
-            height: 3vh;
-            font-size: 14px;
-            font-weight: 600;
-          }
-        }
-        &__right{
-          width: 30vh;
-          height: 100%;
-          // background-color: aqua;
-          float: right;
-          display: flex;
-          &__newuser{
-            background-color: rgb(234, 53, 45);
-            color: rgb(255, 255, 255);
-            display: block;
-            font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(234, 53, 45);
-            border-image: initial;
-            border-radius: 4px;
-            padding: 8px 10px;
-          }
-          &__loguser{
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 149, 238);
-            display: block;
-            font-size: 14px;
-            border-width: 1px;
-            border-style: solid;
-            border-color: rgb(0, 149, 238);
-            border-image: initial;
-            border-radius: 4px;
-            padding: 8px 10px;
-            transition: all 0.3s ease-out 0s;
-            margin: 0 0 0 10px;
-          }
-        }
-      }
-    }
-  }
-  .smart{
-    width: 100%;
-    height: 34vh;
-    background-image: url("image2.jpeg");
-    display: flex;
-    .smart-middle{
-      width: 50%;
-      height: 100%;
-      margin: 0px auto;
-      &__image{
-        width: 20vw;
-        height: 100%;
-        float: right;
-      }
-      &__application{
-        width: 35vw;
-        height: 100%;
-        &__top{
-          color: rgb(255, 255, 255);
-          font-size: 24px;
-          font-weight: 600;
-          margin-top: 4vh;
-          margin-bottom: 15px;
-        }
-        &__middle{
-          color: rgb(255, 255, 255);
-          font-size: 35px;
-          margin-bottom: 20px;
-          &__image{
-            float:right;
-            width: 20vw;
-            height: 100%;
-          }
-        }
-        &__bottom{
-          vertical-align: baseline;
-          margin-top: 10px;
-          padding: 0px;
-          border-width: 0px;
-          width: 25vw;
-          height: 8vh;
-          &__icon{
-            height: 7vh;
-            width: 7vh;
-            margin-left: 10px;
-          }
-        }
-      }
-    }
-  }
 
-  .footer{
-    width: 100%;
-    height: 53%;
-    background-color: rgb(34, 34, 34);
-    color: rgb(255, 255, 255);
-    font-size: 12px;
-    padding: 0px 20px 10px;
-    .footer-middle{
-      margin: 0px auto;
-      width: 73vw;
-      height: 75%;
-      &__box1{
-        padding: 0px 40px 0px 0px;
-        display: inline-block;
-        margin-top: 18px;
-        vertical-align: top;
-        height: 100%;
-        width: 200px;
-        &__content1{
-          font-size: 16px;
-          font-family: Arial;
-          &__company{
-            // color: rgb(255, 255, 255);
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__hiring{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__release{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__blog{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__guide{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-        }
-      }
-      &__box2{
-        padding: 0px 40px 0px 0px;
-        display: inline-block;
-        margin-top: 18px;
-        vertical-align: top;
-        height: 100%;
-        width: 200px;
-        &__content2{
-          font-size: 16px;
-          font-family: Arial;
-          &__guide{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__mercari-flights{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__yuyu-flights{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__big-flights{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__car{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__peace-of-mind{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__false{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__box{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-        }
-      }
-      &__box3{
-        // position: fixed;
-        margin-top: 18px;
-        padding-right: 40px;
-        width: 39%;
-        height: 100%;
-        // background-color: #EEEEEE;
-        // padding: 0px 40px 0px 0px;
-        display: inline-block;
-        vertical-align: top;
-        &__1{
-          display: flex;
-          width: 33vw;
-          height: 30vh;
-          &__content3{
-            font-size: 16px;
-            font-family: Arial;
-            &__privacy{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-            &__terms{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-            &__support{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-            &__compliance{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-          }
-        }
-        &__2{
-          width: 20vw;
-          height: 30vh;
-          // display: inline-block;
-          list-style-type: disc;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-          padding-inline-start: 40px;
-          float: right;
-          margin-top:0 ;
-          &__data{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__item-transactions{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__financing{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-          &__law{
-            opacity: 0.7;
-            margin:16px 0 0;
-            font-size: 12px;
-          }
-        }  
-      }
-      &__box4{
-        margin-top: 18px;
-        padding: 0px 40px 0px 20px;
-        display: inline-block;
-        vertical-align: top;
-        width: 3vw;
-        height: 25vh;
-        // background-color: #EEEEEE;
-        &__cuntry{
-          &__2{
-            line-height: 1.4em;
-            margin: 0;
-            padding: 0;
-            &__japan{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-            &__united-states{
-              opacity: 0.7;
-              margin:16px 0 0;
-              font-size: 12px;
-            }
-          }
-        }
-      }
-    }
-    .footer-bottom{
-      width: 100%;
-      height: 33px;
-      margin: 30px auto 20px;
-      -webkit-box-align: center;
-      align-items: center;
-      display: flex;
-      // background-color: #EEEEEE;
-      &__logo{
-        width: 100px;
-        height: 100px;
-        float: left;
-      }
-    }
-  }
-  .foot{
-    bottom: 32px;
-    font-size: 22px;
-    height: 160px;
-    right: 32px;
-    width: 160px;
-    position: fixed;
-    z-index: 2;
-    text-decoration: none;
-    // background-color: #333;
-    .foot-btn{
-      font-size: 18px;
-      width: 150px;
-      height: 150px;
-      padding-top: 32px;
-      background-color: rgba(234, 54, 45, 0.829);
-      border-radius: 50%;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      .camera{
-        font-size: 60px;
-      }
-      &__name{
-        margin:0px 0 0 0 ;
-        .link{
-          color: #FFFFFF;
-          text-decoration: none;
-          font-size: 100px;
-        }
-        .link:hover{
-          text-decoration: none;
-
-        }
-      }
-    }
-    .foot-btn:hover{
-      opacity: 0.7;
-    }
-  }
-} 
+@import "signup/profile";
+@import "signup/sms_confirmation";
+@import "signup/address";
+@import "signup/signup_complete";
+@import "signup/signup_footer";
+@import "signup/signup_header";

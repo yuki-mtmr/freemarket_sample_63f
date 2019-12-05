@@ -1,0 +1,145 @@
+.address-container {
+  @include signup-container;
+  &__header {
+    @include signup-container-header
+  }
+  .address-form {
+    padding: 24px 16px 40px;
+    &__box {
+      max-width: 343px;
+      margin: 0 auto;
+      padding: 0;
+      &__name {
+        margin: 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .lastname--input {
+          @include form
+        }
+        .firstname--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__name-kana {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .lastname-kana--input {
+          @include form
+        }
+        .firstname-kana--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__pastal-code {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .pastal-code--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__region {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .region--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__city {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require
+        }
+        .city--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__street {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require;
+        }
+        .street--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__building {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require;
+          background-color: #999;
+        }
+        .street--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      &__phone-number {
+        margin: 24px 0 0;
+        .box-group--label {
+          @include label
+        }
+        .input-require {
+          @include input-require;
+          background-color: #999;
+        }
+        .phone-number--input {
+          @include form
+        }
+        .error-text {
+          @include error-text
+        }
+      }
+      .submit-btn {
+        @include btn
+      }
+    }
+  }
+}

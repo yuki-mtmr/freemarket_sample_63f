@@ -1,52 +1,89 @@
+= render 'signup/shared/signup_header'
 .profile-container
-  .profile-container__heading 会員情報入力
+  .profile-container__header
+    会員情報入力
   .profile-form
     .profile-form__box
-      = form_with model: @user, url: sms_confirmation_signup_index_path, method: :get, html: {class: 'first-main__box'}, local: true do |f|
-        .card-form__box__number
+      = form_with model: @user, url: sms_confirmation_signup_index_path, method: :get, html: {class: 'profile--input'}, local: true do |f|
+
+        .profile-form__box__nickname
           %label{class:'box-group--label', for: 'nickname'} ニックネーム
           %span.input-require
             必須
-          = f.text_field :nickname, placeholder: '例) メルカリ太郎'
-          = @user.errors.full_messages_for(:nickname).first #エラーメッセージ
-        .card-form__box__number
+          = f.text_field :nickname, class: 'nickname--input',placeholder: '例) メルカリ太郎'
+          .error-text
+            = @user.errors.full_messages_for(:nickname).first #エラーメッセージ
+
+        .profile-form__box__email
           %label{class:'box-group--label', for: 'email'} メールアドレス
           %span.input-require
             必須
-          = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
-          = @user.errors.full_messages_for(:email).first
-        .card-form__box__number
+          = f.email_field :email, class: 'email--input',placeholder: 'PC・携帯どちらでも可'
+          .error-text
+            = @user.errors.full_messages_for(:email).first
+
+        .profile-form__box__password
           %label{class:'box-group--label', for: 'password'} パスワード
           %span.input-require
             必須
-          = f.password_field :password, placeholder: '7文字以上'
-          = @user.errors.full_messages_for(:password).first
-          %p
+          = f.password_field :password,  class: 'password--input',placeholder: '7文字以上'
+          .error-text
+            = @user.errors.full_messages_for(:password).first
+
+          %p.form-info-text
+            ※ 英字と数字の両方を含めて設定してください
+
+          .form-password-revelation-toggle
+            .checkbox-default
+              %input{type: 'checkbox', id: 'reveal_password'}
+              %i.icon-check
+              %label{for: 'revel_password'} パスワードを表示する
+
+        .profile-form__box__user-confirmation
+          %h3.text-left-sub-head
             本人確認
-          %p
+          .single-text
             安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-        お名前(全角)
-        %br
-          = f.text_field :last_name, placeholder: '例) 山田'
-          = @user.errors.full_messages_for(:last_name).first
-          = f.text_field :first_name, placeholder: '例) 彩'
-          = @user.errors.full_messages_for(:first_name).first 
-        お名前カナ(全角)
-        %br
-          = f.text_field :last_name_kana, placeholder: '例) ヤマダ'
-          = @user.errors.full_messages_for(:last_name_kana).first 
-          = f.text_field :first_name_kana, placeholder: '例) アヤ'
-          = @user.errors.full_messages_for(:first_name_kana).first 
-        %br
-          = f.text_field :birth_year, placeholder: '--'
-          年
-          = f.text_field :birth_month, placeholder: '--'
-          月
-          = f.text_field :birth_day, placeholder: '--'
-          日
-        %br
+
+        .profile-form__box__name
+          .profile-form__box__name--head
+            %label{class:'box-group--label', for: 'name'}お名前(全角)
+            %span.input-require
+              必須
+          = f.text_field :last_name, class: 'last-name--input', placeholder: '例) 山田'
+          = f.text_field :first_name, class: 'first-name--input', placeholder: '例) 彩'
+          .error-text
+            = @user.errors.full_messages_for(:last_name).first
+          .error-text
+            = @user.errors.full_messages_for(:first_name).first 
+
+        .profile-form__box__kana
+          .profile-form__box__kana--head
+            %label{class:'box-group--label', for: 'name'}お名前カナ(全角)
+            %span.input-require
+              必須
+          = f.text_field :last_name_kana, class: 'last-name-kana--input', placeholder: '例) ヤマダ'
+          = f.text_field :first_name_kana, class: 'first-name-kana--input',placeholder: '例) アヤ'
+          .error-text
+            = @user.errors.full_messages_for(:last_name_kana).first 
+          .error-text
+            = @user.errors.full_messages_for(:first_name_kana).first 
+
+        .profile-form__box__birth
+          %label{class:'box-group--label', for: 'name'}生年月日
+          %span.input-require
+            必須
+          .profile-form__box__birth--main
+            = f.text_field :birth_year,class: 'birth_year', placeholder: '--'
+            %span{class: "month"} 年
+            = f.text_field :birth_month,class: 'birth_month', placeholder: '--'
+            %span{class: "month"} 月
+            = f.text_field :birth_day,class: 'birth_day', placeholder: '--'
+            %span{class: "month"} 日
+        %p.form-info-text
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         %br
           「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
         %br
           = f.submit '次へ進む', class: 'submit-btn'
+= render 'signup/shared/signup_footer'

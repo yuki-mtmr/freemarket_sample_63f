@@ -1,0 +1,22 @@
+.complete-container {
+  @include signup-container;
+  &__header {
+    @include signup-container-header
+  }
+  .complete-form {
+    padding: 24px 16px 40px;
+    &__box {
+      max-width: 343px;
+      margin: 0 auto;
+      padding: 0;
+      .complete-text {
+        text-align: center;
+        font-size: 14px;
+      }
+      .complete-btn {
+        @include btn;
+      }
+    }
+  }
+}
+

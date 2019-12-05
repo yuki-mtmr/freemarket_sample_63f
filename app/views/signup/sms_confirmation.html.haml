@@ -1,11 +1,22 @@
-%p
-  電話番号の確認
+= render 'signup/shared/signup_header'
+.sms-container
+  .sms-container__header
+    電話番号の確認
+  .sms-form
+    .sms-form__box
+      = form_with model: @user, url: address_signup_index_path, method: :get, local: true  do |f|
 
-携帯電話の番号
-= form_with model: @user, url: address_signup_index_path, method: :get, local: true  do |f|
-  = f.text_field :phone_number, placeholder: '携帯電話の番号を入力'
-  = @user.errors.full_messages_for(:phone_number).first 
-  %br
-  本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-  %br
-  = f.submit 'SMSを送信する', class: 'btn-default'
+        .sms-form__box__phone-number
+          %label{class:'box-group--label', for: 'phone-number'} 携帯電話の番号
+          = f.text_field :phone_number,class: 'phone-number--input', placeholder: '携帯電話の番号を入力'
+          .error-text
+            = @user.errors.full_messages_for(:phone_number).first 
+        .sms-form__box__text
+          本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+        %br
+        = f.submit 'SMSを送信する', class: 'submit-btn'
+        .sms-form__box__text
+          ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+        .sms-form__box__check-reason
+          電話番号の確認が必要な理由
+= render 'signup/shared/signup_footer'

@@ -2,7 +2,7 @@ class SignupController < ApplicationController
   
   before_action :validates_profile, only: :sms_confirmation# step1のバリデーション
   before_action :validates_sms_confirmation, only: :address # step2のバリデーション
-  #before_action :validates_address, only: :credit_card # step3のバリデーション
+  # before_action :validates_address, only: :credit_card # step3のバリデーション
 
 
   def profile
@@ -64,7 +64,7 @@ class SignupController < ApplicationController
       session[:id] = @user.id  #　ここでidをsessionに入れることでログイン状態に持っていける。
       redirect_to credit_card_signup_index_path #登録完了ページに遷移
     else
-      render :profile
+      render :address
     end
   end
 
