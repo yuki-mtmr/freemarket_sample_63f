@@ -11,22 +11,17 @@ class ItemsController < ApplicationController
   end
 
   def new
-      # item = Item.find(params[:id])
-      # binding.pry
       @item = Item.new
       2.times{@item.images.build}
   end
 
   def create
       @item = Item.new(item_params)
-      # @item.images.build
       if @item.save
-        # Item.find(:id).saller_id
         redirect_to root_path
       else
         render :new
-      # end
-    end
+      end
   end
 
   private
