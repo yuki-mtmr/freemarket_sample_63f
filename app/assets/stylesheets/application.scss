@@ -17,6 +17,46 @@
 @import "users";
 @import "card_new"; 
 
+.foot{
+  bottom: 32px;
+  font-size: 22px;
+  height: 160px;
+  right: 32px;
+  width: 160px;
+  position: fixed;
+  z-index: 2;
+  text-decoration: none;
+  .foot-btn{
+    font-size: 18px;
+    width: 150px;
+    height: 150px;
+    padding-top: 32px;
+    background-color: rgba(234, 54, 45, 0.829);
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    .camera{
+      font-size: 60px;
+    }
+    &__name{
+      margin:0px 0 0 0 ;
+      .link{
+        color: #FFFFFF;
+        text-decoration: none;
+        font-size: 100px;
+      }
+      .link:hover{
+        text-decoration: none;
+
+      }
+    }
+  }
+  .foot-btn:hover{
+    opacity: 0.7;
+  }
+}
+
 @import "signup/profile";
 @import "signup/sms_confirmation";
 @import "signup/address";
