@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   has_many :images, dependent: :destroy   # 「dependent: :destroy」でuserを削除すると関連するimageも削除される
   accepts_nested_attributes_for :images
-  has_one :saler
+  has_many :salers
   belongs_to :user
   # belongs_to :address
 

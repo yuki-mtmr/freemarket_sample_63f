@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def new
       # item = Item.find(params[:id])
+      # binding.pry
       @item = Item.new
       2.times{@item.images.build}
   end
@@ -42,8 +43,8 @@ class ItemsController < ApplicationController
       images_attributes: [
       :image]
     )
-    # .merge(
-    #   user_id:
-    #   current_user.id)
+    .merge(
+      user_id:
+      current_user.id)
   end
 end
