@@ -26,17 +26,26 @@
       .content-middle__main
         .content-middle__main__top
           %button.content-middle__main__top__facebook
-            Facebookでログイン
+            = link_to user_facebook_omniauth_authorize_path do
+              Facebookでログイン
             %i.content-middle__main__top__facebook__icon
           %button.content-middle__main__top__google
-            Gooleでログイン
+            = link_to user_google_oauth2_omniauth_authorize_path do
+              Googleでログイン
             %i.content-middle__main__top__google__icon
         .content-middle__bottom
-          %input.content-middle__bottom__form1
-          %input.content-middle__bottom__form2
-          %input.content-middle__bottom__form3
-          %button.content-middle__bottom__form4
-            ログイン
+          = form_with model: @user, url: new_user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+            .new_user__email
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: 'email--input',placeholder: 'メールアドレス'
+            .new_user__password
+              = f.password_field :password, autocomplete: "current-password",class: 'password--input',placeholder: '7文字以上'
+            -# - if devise_mapping.rememberable?
+              .field
+                = f.check_box :remember_me
+                = f.label :remember_me
+            .actions
+              = f.submit "ログイン",class: 'submit-btn'
+
           %a.content-middle__bottom__pass
             パスワードお忘れの方
   .footer__login

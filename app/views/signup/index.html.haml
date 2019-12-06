@@ -25,10 +25,12 @@
               = link_to profile_signup_index_path,  class: "mail-address" do
                 mailアドレスで登録する
             %button.content-middles__users__main__top__f__facebook
-              Facebookで登録する
+              = link_to user_facebook_omniauth_authorize_path do
+                Facebookで登録する
               %i.content-middles__users__main__top__f__facebook__icon
             %button.content-middles__users__main__top__f__google
-              Gooleで登録する
+              = link_to user_google_oauth2_omniauth_authorize_path do
+                Gooleで登録する
               %i.content-middles__users__main__top__f__google__icon
   .footer__users
     %ul.footer-nav__users

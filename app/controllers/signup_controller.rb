@@ -6,7 +6,15 @@ class SignupController < ApplicationController
 
 
   def profile
-    @user = User.new # 新規インスタンス作成
+    if session[:password_confirmation]
+      @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password_confirmation]
+      )
+    else
+      @user = User.new
+    end
   end
 
   def validates_profile #validateion用step
@@ -62,6 +70,11 @@ class SignupController < ApplicationController
     @user.build_address(session[:address_attributes]) #address情報をテーブルに作成
     if @user.save
       session[:id] = @user.id  #　ここでidをsessionに入れることでログイン状態に持っていける。
+      SnsCredential.create(  #ユーザ登録と同時にこっちも登録
+        uid: session[:uid],
+        provider: session[:provider],
+        user_id: @user.id
+      )
       redirect_to credit_card_signup_index_path #登録完了ページに遷移
     else
       render :address
