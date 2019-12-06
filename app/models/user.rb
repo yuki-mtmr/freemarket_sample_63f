@@ -47,8 +47,8 @@ class User < ApplicationRecord
       # userが登録されていない
       unless user.present?
         user = User.new(
-        nickname: auth.info.name,
-        email: auth.info.email,
+          nickname: auth.info.name,
+          email: auth.info.email,
         )
       end
       sns = snscredential
@@ -75,15 +75,15 @@ class User < ApplicationRecord
       # userが登録されていない
       else
         user = User.new(
-        nickname: auth.info.name,
-        email: auth.info.email,
+          nickname: auth.info.name,
+          email: auth.info.email,
         )
         sns = SnsCredential.new(
           uid: uid,
           provider: provider
         )
 
-        { user: user, sns: sns}
+        return { user: user, sns: sns}
       end
     end
   end

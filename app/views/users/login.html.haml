@@ -38,7 +38,7 @@
             .new_user__email
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'email--input',placeholder: 'メールアドレス'
             .new_user__password
-              = f.password_field :password, autocomplete: "current-password",class: 'password--input',placeholder: '7文字以上'
+              = f.password_field :password, autocomplete: "current-password",class: 'password--input',placeholder: 'パスワード'
             -# - if devise_mapping.rememberable?
               .field
                 = f.check_box :remember_me
