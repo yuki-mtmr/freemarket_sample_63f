@@ -38,11 +38,11 @@ class User < ApplicationRecord
   def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first #firstをつけないとデータが配列で返されて使いたいメソッドが使えなくて困る
+    snscredential = SnsCredential.find_by(uid: uid, provider: provider)
 
     #sns_credentialsが登録されている
     if snscredential.present?
-      user = User.where(email: auth.info.email).first
+      user = User.find_by(email: auth.info.email)
 
       # userが登録されていない
       unless user.present?
@@ -59,7 +59,7 @@ class User < ApplicationRecord
 
     #sns_credentialsが登録されていない
     else
-      user = User.where(email: auth.info.email).first
+      user = User.find_by(email: auth.info.email)
 
 
       # userが登録されている
