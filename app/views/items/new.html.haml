@@ -29,6 +29,8 @@
               %p.wrap-main__middle__content__form__topbox__p
                 最大10枚までアップロードできます
               .wrap-main__middle__content__form__topbox__image
+                ドロップアンドドロップ
+                またはクリックしてファイルをアップロード
                 = f.fields_for :images do |i|
                   = i.file_field :image
                     - if @item.errors.any?
@@ -37,93 +39,94 @@
               .wrap-main__middle__content__form__sell__name
                 %label.wrap-main__middle__content__form__sell__product
                   商品名
-                  %span.wrap-main__middle__content__form__sell__product__spase
+                  %span.wrap-main__middle__content__form__sell__product__span
                     必須
-                    = f.text_field :name, placeholder: :商品名（４０文字まで）
-                    - if @item.errors.any?
-                      = @item.errors.full_messages_for(:name)
+              .wrap-main__middle__content__form__sell__file
+                = f.text_field :name, placeholder: :商品名（４０文字まで）,class: 'name'
+                - if @item.errors.any?
+                  = @item.errors.full_messages_for(:name)
               .wrap-main__middle__content__form__sell__group
                 %label.wrap-main__middle__content__form__sell__group__top
                   商品の説明
-                  = f.text_area :description, placeholder: :商品の説明
+                  %span.wrap-main__middle__content__form__sell__group__top__span
+                    必須
+                .wrap-main__middle__content__form__sell__group__text
+                  = f.text_area :description, placeholder: :商品の説明 ,class: 'description'
                   - if @item.errors.any?
                     = @item.errors.full_messages_for(:description)
             .wrap-main__middle__content__form__detail
               %h3.wrap-main__middle__content__form__detail__h
+                商品の詳細
               .wrap-main__middle__content__form__detail__right
                 .wrap-main__middle__content__form__detail__right__category
                   %label.wrap-main__middle__content__form__detail__right__category__top
                     カテゴリー
+                    %span.wrap-main__middle__content__form__detail__right__category__top__span
+                      必須
                   .wrap-main__middle__content__form__detail__right__category__box
-                    .wrap-main__middle__content__form__detail__right__category__box__wrap
-                      %i.wrap-main__middle__content__form__detail__right__category__box__wrap__icon
-                        -# = f.select :category, [['メンズ', 'メンズ'], ['レディース', 'レディース']]
-                        -# = f.select name: 'category' do
-                        -#   %option{:value => ""}---
-                        -#   %option{:value => "メンズ"}メンズ
-                        -#   %option{:value => "レディース"}レディース
-                          -# - if @item.errors.any?
-                            -# = @item.errors.full_messages_for(:category)
+                    = f.select :category, [['メンズ', 'メンズ'], ['レディース', 'レディース']]
+                    %i.wrap-main__middle__content__form__detail__right__category__box__icon
                 .wrap-main__middle__content__form__detail__right__status
                   %label.wrap-main__middle__content__form__detail__right__status__top
                     商品の状態
+                    %span.wrap-main__middle__content__form__detail__right__status__top__span
+                      必須
                   .wrap-main__middle__content__form__detail__right__status__wrap
-                    .wrap-main__middle__content__form__detail__right__status__wrap
-                      %i.wrap-main__middle__content__form__detail__right__status__wrap__icon
-                        = f.select :condition, [['新品、未使用', '新品、未使用'], ['未使用に近い', '未使用に近い'], ['目立った傷や汚れなし', '目立った傷や汚れなし'], ['やや傷や汚れあり', 'やや傷や汚れあり'], ['傷や汚れあり', '傷や汚れあり'], ['全体的に状態が悪い', '全体的に状態が悪い']]
-                        - if @item.errors.any?
-                          = @item.errors.full_messages_for(:condition)
+                    = f.select :condition, [['新品、未使用', '新品、未使用'], ['未使用に近い', '未使用に近い'], ['目立った傷や汚れなし', '目立った傷や汚れなし'], ['やや傷や汚れあり', 'やや傷や汚れあり'], ['傷や汚れあり', '傷や汚れあり'], ['全体的に状態が悪い', '全体的に状態が悪い']], class: 'status'
+                    - if @item.errors.any?
+                      = @item.errors.full_messages_for(:condition)
+                    %i.wrap-main__middle__content__form__detail__right__status__wrap__icon
             .wrap-main__middle__content__form__delivery
               %h3.wrap-main__middle__content__form__delivery__h3
+                配送について
               .wrap-main__middle__content__form__delivery__box
                 .wrap-main__middle__content__form__delivery__box__burden
                   %label.wrap-main__middle__content__form__delivery__box__burden__top
                     配送料の負担
+                    %span.wrap-main__middle__content__form__delivery__box__burden__top__span
+                      必須
                   .wrap-main__middle__content__form__delivery__box__burden__wrap
+                    = f.select :postage, [['送料込み', '送料込み'], ['着払い', '着払い']]
+                    - if @item.errors.any?
+                      = @item.errors.full_messages_for(:postage)
                     %i.wrap-main__middle__content__form__delivery__box__burden__wrap__icon
-                      = f.select :postage, [['送料込み', '送料込み'], ['着払い', '着払い']]
-                      - if @item.errors.any?
-                        = @item.errors.full_messages_for(:postage)
-                      -# = f.select name: 'postage' do
-                      -#   %option{:value => ""}---
-                      -#   %option{:value => "送料込み"}送料込み（配送料負担）
-                      -#   %option{:value => "着払い"}着払い（購入者負担）
                 .wrap-main__middle__content__form__delivery__box__region
-                  %label.wrap-main__middle__content__form__delivery__box__region__top2
+                  %label.wrap-main__middle__content__form__delivery__box__region__top
                     配送元の地域
+                    %span.wrap-main__middle__content__form__delivery__box__region__top__span
+                      必須
                   .wrap-main__middle__content__form__delivery__box__region__wrap2
+                    = f.collection_select :region, Prefecture.all, :id, :name
                     %i.wrap-main__middle__content__form__delivery__box__region__wrap2__icon2
-                      = f.collection_select :region, Prefecture.all, :id, :name
                 .wrap-main__middle__content__form__delivery__box__groupf
                   %label.wrap-main__middle__content__form__delivery__box__groupf__top3
                     発送までの日数
+                    %span.wrap-main__middle__content__form__delivery__box__groupf__top3__span
+                      必須
                   .wrap-main__middle__content__form__delivery__box__groupf__wrap3
+                    = f.select :shipping_date, [['1~2日', '1~2日'], ['2~3日','2~3日'],['4~7日', '4~7日']]
+                    - if @item.errors.any?
+                      = @item.errors.full_messages_for(:shipping_date)
                     %i.wrap-main__middle__content__form__delivery__box__groupf__wrap3__icon3
-                      = f.select :shipping_date, [['1~2日', '1~2日'], ['2~3日','2~3日'],['4~7日', '4~7日']]
-                      - if @item.errors.any?
-                        = @item.errors.full_messages_for(:shipping_date)
-                      -# = f.select :shipping_date  do
-                      -#   %option{:value => ""}---
-                      -#   %option{:value => "1~2日"}1~2日で発送
-                      -#   %option{:value => "2~3日"}2~3日で発送
-                      -#   %option{:value => "4~7日"}4~7日で発送
             .wrap-main__middle__content__form__price
               %h3.wrap-main__middle__content__form__price__h3
+                販売価格（300〜９,999,999）
               .wrap-main__middle__content__form__price__box4
                 %ul.wrap-main__middle__content__form__price__box4__sellprice
                   %li.wrap-main__middle__content__form__price__box4__sellprice__price
                     .wrap-main__middle__content__form__price__box4__sellprice__price__box
                       %label.wrap-main__middle__content__form__price__box4__sellprice__price__box__left
                         価格
-                        %span.wrap-main__middle__content__form__price__box4__sellprice__price__box__left__require
+                        %span.wrap-main__middle__content__form__price__box4__sellprice__price__box__left__span
+                          必須
                       .wrap-main__middle__content__form__price__box4__sellprice__price__box__right
                         ¥
-                        .wrap-main__middle__content__form__price__box4__sellprice__price__box__right__ran
+                        .wrap-main__middle__content__form__price__box4__sellprice__price__box__ran
                           = f.text_field :price, type: "text", id: "priceinput", onkeyup: "pricegetValue();", placeholder: :）例３００
                   %li.wrap-main__middle__content__form__price__box4__sellprice__fee
                     .wrap-main__middle__content__form__price__box4__sellprice__fee__left
                       %p
-                        販売手数料:
+                        販売手数料(10%)
                         %span#priceoutput
                     .wrap-main__middle__content__form__price__box4__sellprice__fee__right
                   %li.wrap-main__middle__content__form__price__box4__sellprice__profit
@@ -139,9 +142,8 @@
                       %p
                         販売利益：
                         %span#priceoutput2
-                      -# = parseInt(document.getElementById('priceinput').value, 10) * 0.1
-                      .wrap-main__middle__content__form__price__box4__sellprice__profit__right
-                        -# = @item.profit
+                        .wrap-main__middle__content__form__price__box4__sellprice__profit__right
+                          ー
             .wrap-main__middle__content__form__bottombox
               .wrap-main__middle__content__form__bottombox__taboo
                 %p.wrap-main__middle__content__form__bottombox__taboo__p1
@@ -150,15 +152,5 @@
                   またブランド品でシリアルナンバー等がある場合はご記載ください。偽ブランドの販売は犯罪であり処罰される可能性があります。
                 %p.wrap-main__middle__content__form__bottombox__taboo__p3
                   また、出品をもちまして加盟店規約に同意したことになります。
-              = f.button '出品する'
-              -# %button.wrap-main__middle__content__form__bottombox__taboo__btn
-                出品する
-              -# %a.wrap-main__middle__content__form__bottombox__taboo__retrun
-              -#   戻る
-            
-  -# .foot
-  -#   .foot-nav
-  -#   .foot-logo
-  -#   %p.foot-merucari
-  -#     © 2019 Mercari
-          
+              = f.button '出品する', class: 'btn'
+              = f.button '戻る', class: 'btn-2'
