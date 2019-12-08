@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
+
+
   def index
     @items = Item.all
   end
 
   def show
     @item = Item.find(params[:id])
+    @image = Image.find_by(item_id: params[:id])
   end
 
   def product_buy
@@ -42,4 +45,5 @@ class ItemsController < ApplicationController
       user_id:
       current_user.id)
   end
+
 end
