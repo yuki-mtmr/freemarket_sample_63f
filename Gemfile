@@ -31,8 +31,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 
-#credit_card管理
-gem 'payjp'
+# API関係
+gem 'omniauth' 
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'payjp' #credit_card管理
 #環境変数の管理
 gem 'dotenv-rails'
 

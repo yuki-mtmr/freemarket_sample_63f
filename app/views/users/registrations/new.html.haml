@@ -26,10 +26,12 @@
       .content-middle__main
         .content-middle__main__top
           %button.content-middle__main__top__facebook
-            Facebookでログイン
+            = link_to user_facebook_omniauth_authorize_path do
+              Facebookでログイン
             %i.content-middle__main__top__facebook__icon
           %button.content-middle__main__top__google
-            Gooleでログイン
+            = link_to user_google_oauth2_omniauth_authorize_path do
+              Googleでログイン
             %i.content-middle__main__top__google__icon
         .content-middle__bottom
           %input.content-middle__bottom__form1
