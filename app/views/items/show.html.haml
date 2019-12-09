@@ -73,7 +73,7 @@
     %span.item-price__fee
       = @item.postage
   %p.item-buy-btn
-    = link_to product_buy_items_path, class: 'item-buy-btn__content' do
+    = link_to purchase_index_path(@item), class: 'item-buy-btn__content' do
       購入画面に進む
   %p.shipping-not-allowed-message
     この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
