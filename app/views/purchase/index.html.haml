@@ -27,7 +27,7 @@
           .contents__container__middle__item-box__form
             %p.contents__container__middle__item-box__form__price
               ¥
-              = @item.price
+              = @item.price.to_s(:delimited)
               %span
                 着払い
             %p.contents__container__middle__item-box__form__user-have-point
@@ -37,19 +37,27 @@
                 支払い金額
               .contents__container__middle__item-box__form__pay-box__all-price
                 ¥
-                = @item.price
+                = @item.price.to_s(:delimited)
             .contents__container__middle__item-box__form__error-message
               %p.contents__container__middle__item-box__form__error-message__color
+              - if @default_card_information.blank? && @address.blank?
                 配送先と支払い方法の入力を完了してください。
+              - else
             = form_tag(action: :pay,method: :post) do
               %button.contents__container__middle__item-box__form__buy-btn 購入する
       .contents__container__bottom1
         .contents__container__bottom1__user-address
           %h3 配送先
           .contents__container__bottom1__user-address__text
-            〒-
-            %br/
-            %br/
+            〒
+            = @address.postal_code
+            %br
+            = @address.region
+            = @address.city
+            = @address.street
+            %br
+            = @address.last_name
+            = @address.first_name
             %p
           .contents__container__bottom1__user-address__change-btn
             = link_to"#" do
@@ -63,12 +71,19 @@
           - if @default_card_information.blank?
             %br /
           - else
-            = "" + @default_card_information.last4
+            クレジットカード
+            %br
+            = "************" + @default_card_information.last4
+            %br
+            有効期限
+            %br
             - exp_month = @default_card_information.exp_month.to_s
             - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
             = exp_month + " / " + exp_year
+            %br
+            = image_tag "visa.svg", width:"50", height:"20"
           .contents__container__bottom2__user-pay-method__text
-          
+
           .contents__container__bottom2__user-pay-method__change-btn
             = link_to "#" do
               %span

@@ -7,6 +7,7 @@ class PurchaseController < ApplicationController
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     @item = Item.find_by(id: params[:format])
     @images = Image.where(item_id: params[:format])
+    @address = Address.find_by(user_id: current_user.id)
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "cards", action: "index"
