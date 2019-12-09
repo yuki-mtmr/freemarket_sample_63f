@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-  end
+  end 
 
   def show
     @item = Item.find(params[:id])
-    @images = Image.find(params[:id])
+    @images = Image.where(item_id: params[:id])
   end
 
   def product_buy
