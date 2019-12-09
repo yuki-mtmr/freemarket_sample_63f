@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @images = Image.find(params[:id])
   end
 
   def product_buy
