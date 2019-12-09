@@ -1,0 +1,8 @@
+.items__item
+  .items__item--one
+    = link_to item_path(item), class:"" do
+      .image
+        = image_tag item.images[0].image.url, size: '188x188'
+      .text
+      %span
+        = item.name 
