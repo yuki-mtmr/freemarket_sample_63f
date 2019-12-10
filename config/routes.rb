@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     end
   end
 
-  
+
   resources :items, only: [:show, :index] do
     collection do
       get 'product_buy'

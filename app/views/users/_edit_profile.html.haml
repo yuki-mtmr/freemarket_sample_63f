@@ -1,6 +1,10 @@
 .header
   = render 'users/shared/header'
 
+.breadcrumbs
+  - breadcrumb :_edit_profile
+  = render "layouts/breadcrumbs"
+
 .container1
   .container1__sidebar
     = render 'users/shared/side-bar'
