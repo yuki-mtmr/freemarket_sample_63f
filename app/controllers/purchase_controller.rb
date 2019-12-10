@@ -4,7 +4,7 @@ class PurchaseController < ApplicationController
 
   def index
     #Cardテーブルからpayjpの顧客IDを検索
-    @item = Item.find_by(id: params[:format])
+    @item = Item.find(params[:format])
     @images = @item.images
     @address = current_user.address #current_userからアソシエーションで取ってくる
     if @card.blank?
