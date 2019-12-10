@@ -26,6 +26,7 @@ class PurchaseController < ApplicationController
     end
   end
 
+
   def pay
     card = Card.find_by(user_id: current_user.id)
     @item = session[:item]
@@ -39,8 +40,20 @@ class PurchaseController < ApplicationController
     :amount => @item['price'], #支払金額を入力（itemテーブル等に紐づけても良い）
     :customer => card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
-  )
-  redirect_to action: 'done' #完了画面に移動
+    )
+    redirect_to action: 'create' #完了画面に移動
+  end
+
+  def create
+    saler = Saler.new(
+      user_id: current_user.id,
+      item_id: session[:item]['id'],
+    )
+    item = Item.find(session[:item]['id'])
+    item.status = 1
+    item.save
+    saler.save
+    redirect_to root_path
   end
 
   def done

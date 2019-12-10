@@ -47,6 +47,7 @@ Rails.application.routes.draw do
       get 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
+      get 'create', to: 'purchase#create'
     end
   end
   

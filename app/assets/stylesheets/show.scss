@@ -20,6 +20,7 @@
     .item-main-content{
       margin: 16px 0 0;
       height: 420px;
+      position: relative;
       .item-photo{
         float: left;
         &__content{
@@ -27,6 +28,11 @@
           max-width: 300px;
           min-height: 375px;
         }
+      }
+      .sold {
+        z-index: 1;
+            position:absolute;
+            width: 100%;
       }
       .item-detail{
         float: right;
