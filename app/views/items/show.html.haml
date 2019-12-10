@@ -6,7 +6,11 @@
     = @item.name
   .item-main-content
     .item-photo
-      = image_tag @images[0].image.url, class: 'item-photo__content'
+    - if @item.status == 1
+      .sold
+        = image_tag "merkari_sold", width:"120", height:"120"
+    - else
+    = image_tag @images[0].image.url, class: 'item-photo__content'
     %table.item-detail
       %tbody
         %tr
@@ -70,9 +74,11 @@
       (税込)
     %span.item-price__fee
       = @item.postage
-  %p.item-buy-btn
-    = link_to product_buy_items_path, class: 'item-buy-btn__content' do
-      購入画面に進む
+  - if @item.status == 0
+    %p.item-buy-btn
+      = link_to purchase_index_path(@item), class: 'item-buy-btn__content' do
+        購入画面に進む
+  - else
   %p.shipping-not-allowed-message
     この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
   .item-description
