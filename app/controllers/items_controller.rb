@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-
+  before_action :set_item, only:[:show,:destroy,:edit,:update]
 
   def index
     @items = Item.all
   end 
 
   def show
-    @item = Item.find(params[:id])
     @images = Image.where(item_id: params[:id])
     @prefecture =  Prefecture.find(@item.region)
   end
@@ -15,20 +14,23 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-    redirect_to users_path 
+    if @item.destroy
+      redirect_to users_path
+    else
+      redirect_to users_path
+    end
   end
 
   def edit
-    @item = Item.find(params[:id])
     @images = @item.images
   end
 
   def update
-    @item = Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to root_path
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def new
@@ -63,5 +65,10 @@ class ItemsController < ApplicationController
       user_id:
       current_user.id)
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 
 end
