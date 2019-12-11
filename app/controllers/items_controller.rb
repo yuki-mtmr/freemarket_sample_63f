@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+
   def index
     @items = Item.all
   end 
@@ -44,4 +46,5 @@ class ItemsController < ApplicationController
       user_id:
       current_user.id)
   end
+
 end

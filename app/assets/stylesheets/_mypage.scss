@@ -25,6 +25,7 @@
       background: url("mypage_user_bg.png");
       position: relative;
       text-align: center;
+      background-size: cover;
     }
   }
   &__user-icon{
@@ -69,6 +70,8 @@
     }
   }
   &__purchased-product{
+    margin: 40px 0 0;
+    background: #fff;
     &__title{
       padding: 0 16px;
       box-sizing: border-box;
