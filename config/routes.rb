@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   post "/" => "items#create"
-  resources :items, only: [:new, :create]
+  resources :items, only: [:new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   
@@ -22,8 +22,7 @@ Rails.application.routes.draw do
     
   end
 
-
-  resources :items, only: [:show, :index] do
+  resources :items, only: [:show, :index,:destroy,:edit,:update] do
     collection do
       get 'product_buy'
     end
@@ -43,14 +42,4 @@ Rails.application.routes.draw do
       get 'complete' # 登録完了後のページ
     end
   end
-
-  resources :purchase, only: [:index] do
-    collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
-      get 'done', to: 'purchase#done'
-      get 'create', to: 'purchase#create'
-    end
-  end
-  
 end
