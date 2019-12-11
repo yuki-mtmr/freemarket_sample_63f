@@ -11,6 +11,23 @@ class ItemsController < ApplicationController
   def product_buy
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to users_path 
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+    @images = @item.images
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to root_path
+  end
+
   def new
       @item = Item.new
       2.times{@item.images.build}
@@ -37,7 +54,7 @@ class ItemsController < ApplicationController
       :region, 
       :shipping_date, 
       images_attributes: [
-      :image]
+      :image,:id]
     )
     .merge(
       user_id:

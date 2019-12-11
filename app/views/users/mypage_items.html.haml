@@ -1,0 +1,115 @@
+.header
+  = render 'users/shared/header'
+.item-box
+  .item-content
+  %h1.item-name
+    = @item.name
+  .item-main-content
+    .item-photo
+      = image_tag @images[0].image.url, class: 'item-photo__content'
+    %table.item-detail
+      %tbody
+        %tr
+          %th.item-detail__title
+            出品者
+          %td.item-detail__content
+            = link_to mypage_users_path, class:"item-detail__content__user" do
+              sampleuser
+            .item-detail__content__users
+              .item-detail__content__users__ratings
+                = fa_icon 'smile-o', class:'item-detail__content__users__ratings__smile' 
+                %span 0
+              .item-detail__content__users__ratings
+                = fa_icon 'meh-o', class:'item-detail__content__users__ratings__meh' 
+                %span 0
+              .item-detail__content__users__ratings
+                = fa_icon 'frown-o', class:'item-detail__content__users__ratings__frown' 
+                %span 0
+        %tr
+          %th.item-detail__title
+            カテゴリー
+          %td.item-detail__content
+        %tr
+          %th.item-detail__title
+            ブランド
+          %td.item-detail__content
+        %tr
+          %th.item-detail__title
+            サイズ
+          %td.item-detail__content
+            = @item.item_size
+        %tr
+          %th.item-detail__title
+            商品の状態
+          %td.item-detail__content
+            = @item.status
+        %tr
+          %th.item-detail__title
+            配送料の負担
+          %td.item-detail__content
+            = @item.postage
+        %tr
+          %th.item-detail__title
+            配送の方法
+          %td.item-detail__content
+            ゆうゆうメルカリ便
+        %tr
+          %th.item-detail__title
+            配送元地域
+          %td.item-detail__content
+            = link_to "#{@item.region}", class: 'item-detail__content__region'
+        %tr
+          %th.item-detail__title
+            発送日の目安
+          %td.item-detail__content
+            = @item.shipping_date
+  .item-price
+    %span.item-price__bold
+      ¥#{@item.price}
+    %span.item-price__tax
+      (税込)
+    %span.item-price__fee
+      = @item.postage
+  .item-description
+    %p.item-description__content
+      = @item.description
+
+.item-update-box
+  .update-container
+    .update-content
+      -# = link_to "商品の編集", "/items/#{@item.id}/edit", method: :edit, class:"update-btn"
+      = link_to '商品の編集', edit_item_path(@item), class: "update-btn"
+      %p.text or
+      = link_to("商品を一旦停止する","#",class:"change-btn")
+      = link_to("この商品を削除する","/items/#{@item.id}", method: :delete,data:{confirm:"削除してもよろしいでしょうか？",
+        commit:"削除する",cancel:"やめる",title:"ご確認ください" },class:"change-btn")
+
+.item-detail-message
+  .message-container
+    .message-content
+      = form_with() do |form|
+        %p.message-content__alert
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        = form.text_field :text, class: 'message-content__text'
+        = form.submit "コメントする", class: 'message-content__btn'
+.nav-product-link
+  .previous-product.items-link_to
+    = fa_icon "chevron-left" 
+    = link_to "前の商品へ", "#", class: 'item-btn'
+  .next-product.items-link_to
+    = link_to "次の商品へ", "#", class: 'item-btn'
+    = fa_icon "chevron-right"
+.product-social-media-box
+  .text-center
+  %ul.social-media-box
+    %li.social-media-box__content
+      = link_to "#", target: "_blank"  do
+        = fa_icon "facebook-square", class: "social-media-box__content__icon"
+    %li.social-media-box__content
+      = link_to "#", target: "_blank"  do
+        = fa_icon "twitter-square",class: "social-media-box__content__icon"
+    %li.social-media-box__content
+      = link_to "#", target: "_blank" do
+        = fa_icon "pinterest-square", class: "social-media-box__content__icon"
+.footer__show-item
+  = render 'users/shared/footer'

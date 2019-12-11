@@ -22,7 +22,7 @@
               = image_tag '', class: 'user-icon'
               -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
               .mypage__user-name
-                テストユーザー
+                = @user.nickname
                 -# = current_user.nickname  -#ここはユーザー登録した時にコメントアウト外せばログインしているユーザー出せるはず！
               .mypage__user-status
                 評価  
@@ -72,6 +72,6 @@
                 .mypage__purchased-product_tab-container_content_text
                   = image_tag 'https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?39195692', class: 'mercari_info_icon'
                   %br
-                  取引中の商品がありません
+                  = @user.image
 .footer__mypage
   = render 'users/shared/footer'

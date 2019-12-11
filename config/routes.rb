@@ -17,11 +17,13 @@ Rails.application.routes.draw do
       get 'mypage'
       get '_edit-profile'
       get '_card_registration'
+      get 'mypage_items'
     end
+    
   end
 
   
-  resources :items, only: [:show, :index] do
+  resources :items, only: [:show, :index,:destroy,:edit,:update] do
     collection do
       get 'product_buy'
     end
