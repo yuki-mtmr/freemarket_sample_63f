@@ -6,7 +6,11 @@
     = @item.name
   .item-main-content
     .item-photo
-      = image_tag @images[0].image.url, class: 'item-photo__content'
+    - if @item.status == 1
+      .sold
+        = image_tag asset_path("merkari_sold", width:"120", height:"120")
+    - else
+    = image_tag @images[0].image.url, class: 'item-photo__content'
     %table.item-detail
       %tbody
         %tr
@@ -42,7 +46,7 @@
           %th.item-detail__title
             商品の状態
           %td.item-detail__content
-            = @item.status
+            = @item.condition
         %tr
           %th.item-detail__title
             配送料の負担
