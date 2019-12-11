@@ -2,8 +2,6 @@
 -#   %h1 新規チャットグループ
 -#   = render 'form', { group: @group }
 
-
--# = render 'ヘッダー'
 -# = render 'メルカリのicon'
 
 %breadcrumb :マイページ
@@ -22,8 +20,7 @@
         .mypage--right__main
           .mypage--right--upper
             .mypage__user-icon
-              = image_tag '', class: 'user-icon'
-              -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
+              = image_tag 'user_default.png', class: 'user-icon'
               .mypage__user-name
                 テストユーザー
                 -# = current_user.nickname  -#ここはユーザー登録した時にコメントアウト外せばログインしているユーザー出せるはず！
