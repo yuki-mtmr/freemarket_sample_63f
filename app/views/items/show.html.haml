@@ -61,6 +61,7 @@
           %th.item-detail__title
             配送元地域
           %td.item-detail__content
+            = @prefecture.name
             = link_to "#{@item.region}", class: 'item-detail__content__region'
         %tr
           %th.item-detail__title
