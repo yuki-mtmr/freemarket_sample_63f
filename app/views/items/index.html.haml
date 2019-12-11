@@ -6,17 +6,8 @@
       %h3 レディース新着新着アイテム
       .light_box
         %h6 もっと見る >
-    -# = render :partial => "items", :collection => @items
-    = render @items
-    -# .items__item
-    -#   - @items.each do |item|
-    -#     .items__item--one
-    -#       = link_to item_path(item), class:"" do
-    -#         .image
-    -#         .text
-    -#           %span
-    -#             = item.name
-
+    .items__main
+      = render @items
   .smart
     .smart-middle
       .smart-middle__image

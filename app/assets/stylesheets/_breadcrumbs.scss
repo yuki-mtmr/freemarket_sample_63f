@@ -1,0 +1,17 @@
+.breadcrumbs{
+  height: 50px;
+  margin: 0 auto;
+  background-color: white;
+  border-top: 1px solid #F5F5F5;
+  line-height: 50px;
+  padding-left: 15%;
+  box-shadow: 0 0 2px 0 #CECECE;
+  a{
+    color: black;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+      color: #888888;
+    }
+  }
+}

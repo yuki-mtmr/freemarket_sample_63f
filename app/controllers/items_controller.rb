@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+
   def index
     @items = Item.all
   end 
@@ -6,6 +8,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = Image.where(item_id: params[:id])
+    @prefecture =  Prefecture.find(@item.region)
   end
 
   def product_buy
@@ -60,4 +63,5 @@ class ItemsController < ApplicationController
       user_id:
       current_user.id)
   end
+
 end
