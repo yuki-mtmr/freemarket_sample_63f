@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = Image.where(item_id: params[:id])
-    @prefecture =  Prefecture.find(params[:id])
+    @prefecture =  Prefecture.find(@item.region)
   end
 
   def product_buy
