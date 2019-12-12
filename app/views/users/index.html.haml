@@ -14,10 +14,10 @@
         .mypage--right__main
           .mypage--right--upper
             .mypage__user-icon
-              = image_tag '', class: 'user-icon'
+              = image_tag asset_path('user_default.png'), class: 'user-icon'
               -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
               .mypage__user-name
-                テストユーザー
+                = current_user.nickname
                 -# = current_user.nickname  -#ここはユーザー登録した時にコメントアウト外せばログインしているユーザー出せるはず！
               .mypage__user-status
                 評価  
@@ -34,7 +34,7 @@
               = link_to 'root_path', class:'info-link'  do
                 .info-box
                   .info-icon
-                    = image_tag '', class: 'mercari_info_icon'
+                    = image_tag asset_path('user_default.png'), class: 'mercari_info_icon'
                   -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
                   .info-box__right
                     .info-message
@@ -44,7 +44,7 @@
               = link_to 'root_path', class:'info-link'  do
                 .info-box
                   .info-icon
-                    = image_tag '', class: 'mercari_info_icon'
+                    = image_tag asset_path('user_default.png'), class: 'mercari_info_icon'
                   -#↑は画像をimagesに入れて画像のファイル名を入れたものに変えれば出るはず！
                   .info-box__right
                     .info-message
