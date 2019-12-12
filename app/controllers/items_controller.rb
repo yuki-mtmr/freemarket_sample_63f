@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
-
+  before_action :set_item,only:[:show,:edit,:destroy,:update]
 
   def index
     @items = Item.all
   end 
 
   def show
-    @item = Item.find(params[:id])
     @images = Image.where(item_id: params[:id])
     @prefecture =  Prefecture.find(@item.region)
   end
@@ -28,6 +27,26 @@ class ItemsController < ApplicationController
       end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      redirect_to uers_path
+    end
+  end
+
+  def edit
+    @images = @item.images
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def item_params
@@ -40,11 +59,15 @@ class ItemsController < ApplicationController
       :region, 
       :shipping_date, 
       images_attributes: [
-      :image]
+      :image,:id]
     )
     .merge(
       user_id:
       current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

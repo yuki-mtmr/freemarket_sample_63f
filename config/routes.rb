@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   root to: "items#index"
   post "/" => "items#create"
-  resources :items, only: [:new, :create]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  
+  resources :items, only: [:new,:create,:show,:index,:edit,:destroy,:update] do
+    collection do
+      get 'product_buy'
+    end
+  end
   
   resources :users, only: [:index] do
     collection do
@@ -17,17 +20,10 @@ Rails.application.routes.draw do
       get 'mypage'
       get '_edit-profile'
       get '_card_registration'
-    end
-  end
-
-
-  resources :items, only: [:show, :index] do
-    collection do
-      get 'product_buy'
+      get 'mypage_items'
     end
   end
   
-
   resources :cards , only: [:new, :index, :create, :destroy]
 
 
