@@ -42,7 +42,7 @@
           %th.item-detail__title
             商品の状態
           %td.item-detail__content
-            = @item.status
+            = @item.condition
         %tr
           %th.item-detail__title
             配送料の負担
@@ -57,6 +57,7 @@
           %th.item-detail__title
             配送元地域
           %td.item-detail__content
+            = @prefecture.name
             = link_to "#{@item.region}", class: 'item-detail__content__region'
         %tr
           %th.item-detail__title
