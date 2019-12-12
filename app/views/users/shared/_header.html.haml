@@ -40,7 +40,7 @@
             %span やることリスト
           .header-middle__bottom__right__nickname
             = fa_icon 'user', class: "left__category"
-            = link_to mypage_users_path do
+            = link_to users_path do
               = current_user.nickname
 
         - else
