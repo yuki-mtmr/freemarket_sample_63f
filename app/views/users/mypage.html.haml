@@ -22,8 +22,7 @@
             .mypage__user-icon
               = image_tag 'user_default.png', class: 'user-icon'
               .mypage__user-name
-                テストユーザー
-                -# = current_user.nickname  -#ここはユーザー登録した時にコメントアウト外せばログインしているユーザー出せるはず！
+                = current_user.nickname 
               .mypage__user-status
                 評価  
                 %span 0
@@ -72,6 +71,6 @@
                 .mypage__purchased-product_tab-container_content_text
                   = image_tag 'https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?39195692', class: 'mercari_info_icon'
                   %br
-                  取引中の商品がありません
+                  = current_user.image
 .footer__mypage
   = render 'users/shared/footer'
