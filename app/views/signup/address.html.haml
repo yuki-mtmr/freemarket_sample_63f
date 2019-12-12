@@ -1,7 +1,8 @@
-= render 'signup/shared/signup_header'
+.signup_address
+  = render 'signup/shared/signup_header'
 .address-container
   .address-container__header
-    会員情報入力
+    発送元・お届け先住所入力
   .address-form
     .address-form__box
       = form_with model: @user, url: signup_index_path, method: :post, html: {class: 'address--input'}, local: true do |f|
