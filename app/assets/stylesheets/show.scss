@@ -161,8 +161,45 @@
       }
     }
   }
-
-
+  .item-update-box{
+    width: 700px;
+    margin: 8px auto;
+    .update-container{
+      .update-content{
+        padding: 24px;
+        background: #fff;
+        .update-btn{
+          width: 100%;
+          font-size: 15px;    
+          display: inline-block;
+          margin-top: 16px;
+          background: #ea352d;
+          text-align: center;
+          color: #fff;
+          text-decoration: none;line-height: 60px;
+        }
+        .text{
+          width: 100%;
+          text-align: center;
+          display: inline-block;
+          margin-top: 16px;
+          line-height: 25px;
+          font-size: 15px;
+        }
+        .change-btn{
+          width: 100%;
+          display: inline-block;
+          line-height: 60px;
+          font-size: 15px;
+          margin: 13px 0 0;
+          text-align: center;
+          background: #aaa;
+          color: #fff;
+          height: 60px;
+        }
+      }
+    }
+  }
   .item-detail-message{
     width: 700px;
     margin: 8px auto;
