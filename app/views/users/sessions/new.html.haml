@@ -1,5 +1,5 @@
 %h2 Log in
-= form_with model: @user, url: user_signin_path, id: 'new_user', class: 'new_user', local: true do |f|
+= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
   .field
     = f.label :email
     %br/

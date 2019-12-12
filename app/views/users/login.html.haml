@@ -34,7 +34,7 @@
               Googleでログイン
             %i.content-middle__main__top__google__icon
         .content-middle__bottom
-          = form_with model: @user, url: new_user_session_path, id: 'new_user', class: 'new_user', local: true do |f|
+          = form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true, method: "post" do |f|
             .new_user__email
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'email--input',placeholder: 'メールアドレス'
             .new_user__password
