@@ -21,19 +21,25 @@
     .header-middle__bottom
       .header-middle__bottom__left
         .header-middle__bottom__left__category
-          カテゴリーから探す
+          = fa_icon 'list', class: "left__category"
+          %span カテゴリーから探す
         .header-middle__bottom__left__brand
-          ブランドから探す
+          = fa_icon 'tag', class: "left__category"
+          %span ブランドから探す
       .header-middle__bottom__right
 
         - if user_signed_in?
           .header-middle__bottom__right__notice
-            お知らせ
+            = fa_icon 'bell', class: "left__category"
+            %span お知らせ
           .header-middle__bottom__right__favorite
-            いいね！一覧
+            = fa_icon 'heart', class: "left__category"
+            %span いいね！一覧
           .header-middle__bottom__right__todo
-            やることリスト
+            = fa_icon 'check', class: "left__category"
+            %span やることリスト
           .header-middle__bottom__right__nickname
+            = fa_icon 'user', class: "left__category"
             = link_to mypage_users_path do
               = current_user.nickname
 
