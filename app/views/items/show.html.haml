@@ -8,7 +8,7 @@
     .item-photo
     - if @item.status == 1
       .sold
-        = image_tag asset_path("merkari_sold", width:"120", height:"120")
+        = image_tag asset_path("merkari_sold"), width:"120", height:"120"
     - else
     = image_tag @images[0].image.url, class: 'item-photo__content'
     %table.item-detail
@@ -33,10 +33,12 @@
           %th.item-detail__title
             カテゴリー
           %td.item-detail__content
+            レディース
         %tr
           %th.item-detail__title
             ブランド
           %td.item-detail__content
+            ブランド
         %tr
           %th.item-detail__title
             サイズ

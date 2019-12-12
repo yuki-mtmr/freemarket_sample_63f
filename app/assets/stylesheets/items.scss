@@ -129,7 +129,7 @@ html {
   .smart{
     width: 100%;
     height: 34vh;
-    background-image: url("image2.jpeg");
+    background-image: url(asset_path("image2.jpeg"));
     display: flex;
     .smart-middle{
       width: 50%;
