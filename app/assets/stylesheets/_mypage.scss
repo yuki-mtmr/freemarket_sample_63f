@@ -22,7 +22,7 @@
     }
     &--upper{
       height:200px;
-      background: url("mypage_user_bg.png");
+      background: url(asset_path("mypage_user_bg.png"));
       position: relative;
       text-align: center;
       background-size: cover;
