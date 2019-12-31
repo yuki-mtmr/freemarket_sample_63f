@@ -1,5 +1,12 @@
 # README
 
+# URL
+http://54.64.98.200/
+
+## sample
+- ID: admin
+- Pass: 2222
+
 # freemarket_sample_63f DB設計
 ## usersテーブル
 |Column|Type|Option|
